@@ -1,0 +1,47 @@
+.bank-container{
+    .form-container{
+        form{
+            .form-control{
+                padding: 3%;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                font-size: 15px;
+                background-color: #f0ecec;
+                transition: all ease .5s;
+                cursor: pointer;
+                &:focus{
+                    transition: all ease .5s;
+                    background-color: $pwhite;
+                    border: 1px solid $secondary;
+                    
+                }
+            }
+            .amount,.name-email,.phone-address,.relate-occu,.name-number,.type-name{
+                margin: 1% 0%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3%;
+
+            }
+         .submit-button{
+             .btn-submit{
+                padding: 1% 3%;
+                background-color: $primary;
+                color: $pwhite;
+                font-size: 20px;
+                border: none;
+                cursor: pointer;
+                transition: all ease .5s;
+                &:hover{
+                    transition: all ease .5s;
+                    background-color: $secondary;
+
+                }
+             }
+         }
+        }
+    }
+ }
+ 
+ 

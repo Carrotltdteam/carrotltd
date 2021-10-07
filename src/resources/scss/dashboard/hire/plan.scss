@@ -1,0 +1,133 @@
+.plan-container{
+    .heading{
+        text-align: center;
+    }
+    .plan{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:5%;
+        .card{
+            height: fit-content;
+            border: 1px solid $primary;
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            
+            .starter-card-heading{
+                text-align: center;
+                background: linear-gradient(to right,#DCEC22,#85CD0D);
+                padding: 4%;
+                color: $pwhite;
+                p,h1{
+                    margin: 1%;
+                }
+                
+            }
+           .lite-card-heading{
+                text-align: center;
+                background: linear-gradient(to right,#0C7995,#63E7F6);
+                padding: 4%;
+                color: $pwhite;
+                p,h1{
+                    margin: 1%;
+                } 
+            }
+            .premium-card-heading{
+                text-align: center;
+                background: linear-gradient(to right,$primary,$secondary);
+                padding: 4%;
+                color: $pwhite;
+                p,h1{
+                    margin: 1%;
+                }
+            }
+            .card-data{
+                .btn-container{
+                    text-align: center;
+                   
+                    color: red;
+                    input{
+                        border: none;
+                        padding:5% 10%;
+                        margin-bottom: 10%;
+                        color: $secondary;
+                    }
+                    .btn-starter{
+                        border: solid;
+                        border-image-slice: 1;
+                        border-width: 3px;
+                        background-color: $pwhite;
+                        border-image-source:linear-gradient(to right,#dfed23,#82cc0c);
+                        transition: all ease-in-out .3s;
+                        cursor: pointer;
+                        &:hover{
+                            color: $pwhite;
+                            transition: all ease-in-out .3s;  
+                            border-image-slice: 1;
+                            border-width: 0;
+                            border-radius: 10px;
+                            background: linear-gradient(to right,#dfed23,#82cc0c);
+                        }
+                        
+                    }
+                    .btn-lite{
+                        border: solid;
+                        border-image-slice: 1;
+                        border-width: 3px;
+                        background-color: $pwhite;
+                        border-image-source:linear-gradient(to right,#0C7995,#63E7F6);
+                        transition: all ease-in-out .3s;
+                        cursor: pointer;
+                        &:hover{
+                            color: $pwhite;
+                            transition: all ease-in-out .3s;
+                            border-image-slice: 1;
+                            border-width: 0;
+                            border-radius: 10px;
+                            background: linear-gradient(to right,#0C7995,#63E7F6);
+                        }
+                    }
+                    .btn-premium{
+                        border: solid;
+                        border-image-slice: 1;
+                        border-width: 3px;
+                        background-color: $pwhite;
+                        border-image-source:linear-gradient(to right,$primary,$secondary);
+                        transition: all ease-in-out .3s;
+                        cursor: pointer;
+                        &:hover{
+                            color: $pwhite;
+                            transition: all ease-in-out .3s;
+                            border-image-slice: 0;
+                            border-radius: 10px;
+                            border-width: 0;
+                            
+                            background: linear-gradient(to right,$primary,$secondary);
+                        }
+                    }
+                }
+                li{
+                    margin:5% 0%;
+                }
+                .starter-ul{
+                    color:#85CD0D;
+                    span{
+                        color:$secondary;
+                    } 
+                }
+                .lite-ul{
+                    color:#63E7F6;
+                    span{
+                        color:$secondary;
+                    } 
+                }
+                .premium-ul{
+                    color:$primary;
+                    span{
+                        color:$secondary;
+                    } 
+                }
+            }
+        }
+    }
+
+}

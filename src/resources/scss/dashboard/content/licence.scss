@@ -1,0 +1,48 @@
+.licence-container{
+    .form-container{
+        .form-control{
+            padding: 3%;
+            background-color: #F0ECEC;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            transition: all ease .3s;
+            cursor: pointer;
+        
+            &:focus{
+                transition: all ease .3s;
+                background-color: $pwhite;
+                border: 1px solid $secondary;
+            }
+        }
+        .type-number{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:3%;
+            margin:3% 0%;
+        }
+        .licence-upload{
+            margin:3% 0%;
+        }
+        .btn-container{
+            .btn-submit{
+                padding: 1% 2.5%;
+                font-size: 18px;
+                background-color: $primary;
+                border: none;
+                cursor: pointer;
+                color: $pwhite;
+                transition: all ease .3s;
+                &:hover{
+                    transition: all ease .3s;
+                    background-color: $secondary;
+
+                }
+            }
+            
+        }
+    }
+    .hide{
+        display: none;
+    }
+}

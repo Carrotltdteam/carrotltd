@@ -1,0 +1,60 @@
+.reset-container{
+    margin-top: -10%;
+    .signin{
+        padding-top: 10%;
+        background: linear-gradient(to right,$secondary,$primary);
+        height: 100vh;
+        display: grid;
+        place-content:  center;
+        grid-template-columns: .55fr;
+        @media only screen and (max-width: 900px) {
+            grid-template-columns: .8fr;
+         }
+       
+
+        .signin-form{
+            
+            padding: 10% 10% 10% 5%;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            .text{
+                text-align: center;
+                h1{
+                    color: $primary;
+                }
+
+            }
+
+            form{
+                
+                .form-control{
+                    padding: .8em;
+                    margin:2% 0%;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $pwhite;
+                    outline: none;
+                    width: 100%;
+                }
+                .btn-container{
+                    text-align: center;
+                    .btn-signin{
+                        margin: 2% 0%;
+                        align-self: center;
+                        border: none;
+                        font-size: 18px;
+                        padding: .6rem 2rem;
+                        border-radius: 30px;
+                        background-color: $primary;
+                        color: white;
+                        transition: all ease .3s;
+                        cursor: pointer;&:hover{
+                            transition: all ease .3s;
+                            background-color: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// VARIABLES
+
+$primary:#fa5508;
+$secondary:#0f1b5f;
+$pwhite: #FDFFFC;
+
+* {
+  font-family: "Thasadith";
+}
+
+
+@import './header/header.scss';
+@import './landing/slide/slide.scss';
+@import './landing/we/weare.scss';
+@import './landing/category/category.scss';
+@import './landing/services/services.scss';
+@import './landing/faq/faq.scss';
+@import './footer/footer.scss';
+@import './about/about.scss';
+@import './contact/contact.scss';
+@import './signup/signup.scss';
+@import './signin/signin.scss';
+@import './category/categories.scss';
+@import './dashboard/dashboard.scss';
+@import './admin/adminsignin.scss';
+@import './reset/reset.scss';

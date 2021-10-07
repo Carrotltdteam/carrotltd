@@ -1,0 +1,97 @@
+
+.category_container{
+    text-align: center;
+    h1{
+      
+        font-size: 50px;
+        color: $primary;
+        @media only screen and (max-width: 400px) {
+            font-size: 35px;
+          }
+       
+    }
+    p{
+        color: grey;
+       
+    }
+.category{
+    margin: 3% 10%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3%;
+    @media only screen and (max-width: 1100px) {
+        grid-template-columns: 1fr 1fr;
+     }
+     @media only screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        margin-bottom: 15%;
+     }
+    .card{
+        position: relative;
+        &:hover .card-link{
+                transition: all ease-in  0.3s;
+                width: 50%;
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+                background-color: $secondary;
+                padding: 0.7rem 4.5rem;
+            }
+            box-shadow: 1px 1px  5px rgba(255, 68, 0, 0.192);
+            .card-img{
+                img{
+                    width: 100%;  
+                }
+            }
+        .card-link{
+            position: absolute;
+            bottom: 10%;
+            left: 0%;
+            text-decoration: none;  
+            justify-self: center;
+            border: none;
+            width: max-content;
+            padding: 0.7rem 1.7rem;
+            border: 1px solid $secondary;
+            background-color: $primary;
+            color: white;
+            transition: all ease-in  0.3s;
+            @media only screen and (max-width: 600px) {
+               width: 30%;
+             }
+             @media only screen and (max-width: 400px) {
+                width: max-content;
+              }
+        }
+    }
+}
+.more-container{
+      display: flex;
+      justify-content: center;
+    .more{
+            width: max-content;
+            margin-bottom: 5%;
+            text-decoration: none;
+            display: flex;
+            border: none;
+            padding: 1rem 3rem;
+           
+            border-radius: 30px;
+            background-color: $secondary;
+            color: white;
+            cursor: pointer;
+            transition: all ease-in  0.3s;
+           
+            .line{
+                font-size: 1.27rem;
+                transition:all .3s ease;
+            }
+            &:hover{
+                .line{
+                    margin-left: 10px;
+                }
+                transition: all ease-in  0.3s;
+                background-color: $primary;
+            }
+    }
+}
+}

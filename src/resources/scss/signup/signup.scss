@@ -1,0 +1,84 @@
+.signup-container{
+    margin-top: -7%;
+    .signup{
+        padding-top: 10%;
+        background-image:url("../../images/exam.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        height: 100vh;
+       
+        display: grid;
+        place-content:center;
+        .signup-form{
+            padding: 5%;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            .text{
+                text-align: center;
+                h1{
+                    color: $primary;
+                }
+                p{
+                    color: grey;
+                }
+
+            }
+
+            form{
+                display: grid;
+                justify-content: center;
+                @media only screen and (max-width: 400px) {
+                    justify-content: start;
+                 }
+                
+                .form-control{
+                    padding: .8em;
+                    margin:2% 0%;
+                    border: 2px solid $pwhite;
+                    border-radius: 10px;
+                    background-color: $pwhite;
+                    outline: none;
+                    width: 100%;
+                    @media only screen and (max-width: 400px) {
+                        width: 90%;
+                     }
+                   
+                }
+                .signup-type{
+                    justify-self: center;
+                    display: flex;
+                    .bb{
+                        margin: 2% 0%;
+                        justify-self: start;
+                        border: none;
+                        font-size: 18px;
+                        padding: .6rem .5rem;
+                        background-color: $pwhite;
+                        color: $secondary;
+                        cursor: pointer;
+                    }
+                    .active{
+                        background-color: $primary;
+                    }
+                }
+                
+                .btn-signup{
+                    margin: 2% 0%;
+                    justify-self: center;
+                    border: none;
+                    font-size: 18px;
+                    padding: .6rem 2rem;
+                    border-radius: 30px;
+                    background-color: $primary;
+                    color: white;
+                    transition: all ease .3s;
+                    cursor: pointer;&:hover{
+                        transition: all ease .3s;
+                        background-color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}

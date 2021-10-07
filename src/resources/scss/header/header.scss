@@ -1,0 +1,283 @@
+.scrolled{
+    margin-top: 3px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    transition: all ease-in .3s;
+    .nav-link-container{
+      transition: all ease .3s;
+     display: grid;
+     grid-template-columns: .155fr 1fr;
+    .logo{
+      background-color: $pwhite;
+      border-bottom-left-radius: 70px;
+      border-bottom-right-radius: 70px;
+        .img-logo{
+         width: 100%;
+         max-height: fit-content;
+        }   
+    }
+    #active{
+      color: $primary;
+  
+    }
+        .links{
+          transition: all ease .3s;
+         grid-column-start: 2;
+         display: grid;
+         text-align: center;
+         background-color: $pwhite;
+         .nav_link{
+          text-decoration: none;
+          color: $secondary;
+           padding: 1%;
+           margin: 1px;
+           border-bottom: 1px solid $secondary;
+           border-radius: 10px;
+         }
+         .nav_link_log{
+           background-color: $secondary;
+           text-decoration: none;
+           color: $pwhite;
+           padding: 1%;
+           margin: 1px;
+ 
+         }
+        }
+      }
+    .mobile{
+      color: $secondary;
+      width: 100%;
+      text-align: right;
+      font-size: 25px;
+      display: none;
+      .nav-icon{
+        padding:1% 3%;
+      }
+      @media only screen and (max-width: 800px) {
+        display: block;  
+    }
+    }
+    .hidden{
+      transition: all ease-in .3s;
+        display: grid;
+        grid-template-columns: .155fr 1fr;
+        #active{
+          color: $primary;
+
+        }
+       .logo{
+         background-color: $pwhite;
+         border-bottom-left-radius: 70px;
+         border-bottom-right-radius: 70px;
+          .img-logo{
+          width: 100%;
+          }   
+       }
+       .links{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-grow: 2.5;
+        .nav_link_log{
+          color: $pwhite;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            background-color: $primary;
+            padding:.8em 1.8em;
+            border-radius: 30px;
+            transition: all ease-in  0.3s;
+            &:hover{
+                transition: all ease-in  0.3s;
+                background-color: $secondary;
+            }
+        }
+        .nav_link{
+            text-decoration: none;
+            color: $pwhite;
+            text-transform: uppercase;
+            &:after{
+              display:block;
+              content: '';
+              border-bottom: solid 2px $primary; 
+              transform: scaleX(0);  
+              transition: transform 400ms ease-in-out;
+              transform-origin:100% 50%
+            }
+            &:hover:after { 
+              transform: scaleX(1);
+              transform-origin:0 50%;
+            }   
+          }
+          @media only screen and (max-width: 800px) {
+              display: none;
+              overflow: hidden;
+          }
+
+          
+      }
+
+      
+    }  
+  }
+
+
+.header-container{
+    transition: all ease-in .3s;
+    position: fixed;
+     width: 100%;
+     color: $secondary;
+     z-index: 2;
+     top: 0%;
+     .mobile{
+      color: $secondary;
+      background-color: $primary;
+      width: 100%;
+      text-align: end;
+      font-size: 25px;
+      display: none;
+      .nav-icon{
+        padding:1% 3%;
+      }
+      @media only screen and (max-width: 800px) {
+        display: block;  
+    }
+  }
+     .hidden{
+      transition: all ease .3s;
+      display: grid;
+       grid-template-columns: .155fr 1fr;
+       #active{
+        color: $secondary;
+
+      }
+       .logo{
+        background-color: $pwhite;
+           .img-logo{
+            width: 100%; 
+           }    
+       }
+       .links{
+        background-color: $primary;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-grow: 2.5;
+        .nav_link_log{
+            color: $pwhite;
+            text-decoration: none;
+            color: $pwhite;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            background-color: $secondary;
+            padding:.8em 1.8em;
+            border-radius: 30px;
+            transition: all ease-in  0.3s;
+            &:hover{
+                transition: all ease-in  0.3s;
+                background-color:rgba(54, 48, 46, 0.616);
+            }
+        }
+        .nav_link{
+            text-decoration: none;
+            color: $pwhite;
+            font-weight: bold;
+            text-transform: uppercase;
+            &:after{
+              display:block;
+              content: '';
+              border-bottom: solid 2px $secondary;;  
+              transform: scaleX(0);  
+              transition: transform 400ms ease-in-out;
+              transform-origin:100% 50%
+            }
+            &:hover:after { 
+              transform: scaleX(1);
+              transform-origin:0 50%;
+            }   
+          }
+          @media only screen and (max-width: 800px) {
+              display: none;
+              overflow: hidden;
+          }
+      }
+
+       }
+      
+      
+   .nav-link-container{
+     transition: all ease .3s;
+    display: grid;
+    grid-template-columns: .155fr 1fr;
+   .logo{
+     background-color: $secondary;
+       .img-logo{
+        width: 100%;
+       }   
+   }
+   #active{
+    color: $secondary;
+
+  }
+       .links{
+        transition: all ease .3s;
+        grid-column-start: 2;
+        display: grid;
+        text-align: center;
+        background-color: $primary;
+        
+        .nav_link{
+          border-top: 1px solid $secondary;
+        border-radius: 10px;
+         text-decoration: none;
+         color: $pwhite;
+          padding: 1%;
+          margin: 1px;
+        }
+        .nav_link_log{
+          background-color: $secondary;
+          text-decoration: none;
+          color: $pwhite;
+          padding: 1%;
+          margin: 1px;
+
+        }
+       }
+     }
+  
+   }
+   
+   .uparrow{
+    position: fixed;
+    left: 92%;
+    bottom: 2%;
+    font-size: 2.5rem;
+    z-index: 100;
+    cursor: pointer;
+    color: $primary;
+    height: min-content;
+  
+    
+    transition:all ease .3s;
+    @media only screen and (max-width: 700px) {
+      left: 90%;
+   }
+   @media only screen and (max-width: 500px) {
+    left: 85%;
+ }
+ @media only screen and (max-width: 400px) {
+  left: 80%;
+}
+   .hide{
+    display: none;
+   }
+   .show{
+     display: block;
+   }
+  }

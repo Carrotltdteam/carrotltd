@@ -1,0 +1,91 @@
+.home-container{
+    .sidebar{
+      z-index: 100;   
+      display: grid; 
+      background-color: $secondary;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 18%;
+      height: 100vh;
+      .profile-pic{
+          text-align: center;
+          align-self: center;
+          img{
+            border-radius: 50%;
+            width: 50%;
+            cursor: pointer;
+          }
+      }
+      .nav-links{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          .nav_link{
+                padding: 6% 1%;
+                text-decoration: none;
+                color: $primary;
+                text-align: center;
+                background-color: $pwhite;
+                margin: 3% 10%;
+                transition: all ease .3s;
+                cursor: pointer;
+                border: none;
+                &:hover{
+                    transition: all ease .3s;
+                    color: $secondary;
+                }
+          }
+         
+      }
+          .btn-logout{
+            align-self: end;
+            border: none;
+            padding: 5% 7%;
+            font-size: 15px;
+            background-color: $primary;
+            color: $pwhite;
+            cursor: pointer;
+            transition: all ease .3s;
+            &:hover{
+                color: $primary;
+              transition: all ease .3s;
+              background-color: $pwhite;
+              border: 1px solid black;
+            }
+          }
+          .uparrow{
+            position: fixed;
+            left: 92%;
+            bottom: 2%;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: $primary;
+            height: min-content;
+            transition:all ease .3s;
+            @media only screen and (max-width: 700px) {
+              left: 90%;
+           }
+           @media only screen and (max-width: 500px) {
+            left: 85%;
+         }
+         @media only screen and (max-width: 400px) {
+          left: 80%;
+        }
+           .hide{
+            display: none;
+           }
+           .show{
+             display: block;
+           }
+        }
+    }
+
+      .content {
+      margin-left: 18%;
+          padding: 1% 3%;
+        }
+
+   
+}

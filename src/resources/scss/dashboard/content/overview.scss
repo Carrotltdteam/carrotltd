@@ -1,0 +1,36 @@
+.details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid $primary ;
+    padding:2% 3%;
+    background-color: rgba(218, 216, 216, 0.37);
+    border-radius: 10px;
+    .detail{
+        text-transform: uppercase;
+    }
+    .email{
+        text-transform: lowercase;
+    }
+}
+.bio{
+    border: 1px solid $primary ;
+    padding:2% 3%;
+    background-color: rgba(218, 216, 216, 0.37);
+    border-radius: 10px;
+    width: 50%;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    
+
+}
+.overview{
+    border: 1px solid $primary ;
+    padding:2% 3%;
+    background-color: rgba(218, 216, 216, 0.37);
+    border-radius: 10px;
+    width: 50%;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    margin-bottom: 2%;
+
+}

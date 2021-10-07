@@ -1,0 +1,28 @@
+.cat-container{
+    .cat-content{
+        .cat-button{
+            h2{
+                text-align: center;
+                padding: .8rem;
+                background-color: $primary;
+                border-radius: 10px;
+                color: $pwhite;
+                text-transform: uppercase;
+            }
+        }
+        .cat-body{
+            margin: 5% 2%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2%;
+            .card{
+                .image{
+                    img{
+                        width: 100%;
+                    }
+                   
+                }
+            }
+        }
+    }
+}

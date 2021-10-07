@@ -1,0 +1,68 @@
+.subject-container{
+    .form-conatiner{
+        .form-control{
+            padding: 3%;
+            background-color: #F0ECEC;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            transition: all ease .3s;
+            cursor: pointer;
+            &:focus{
+                transition: all ease .3s;
+                background-color: $pwhite;
+                border: 1px solid $secondary;
+            }
+        }
+        .btn-container{
+            .btn-submit{
+                padding: 1% 2.5%;
+                font-size: 18px;
+                background-color: $primary;
+                border: none;
+                cursor: pointer;
+                color: $pwhite;
+                transition: all ease .3s;
+                &:hover{
+                    transition: all ease .3s;
+                    background-color: $secondary;
+
+                }
+            }
+            
+        }
+
+        .btn-right{
+            text-align: right;
+            .btn-submit{
+                padding: 1.5% 2.5%;
+                font-size: 15px;
+                background-color: $secondary;
+                border: none;
+                cursor: pointer;
+                color: $pwhite;
+                transition: all ease .3s;
+                &:hover{
+                    transition: all ease .3s;
+                    background-color: $primary;
+
+                }
+            }
+            
+        }
+        .subject{
+            .hide{
+                display: none;
+            }
+        }
+
+        .group-class,.subject,.input-subject{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:3%;
+            margin:3% 0%;
+
+        }
+    }
+   
+}

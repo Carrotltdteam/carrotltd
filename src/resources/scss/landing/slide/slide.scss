@@ -1,0 +1,116 @@
+.fade{
+    margin-top: -14%;
+    z-index: -1;  
+    position: static;
+}
+.each-fade{ 
+    .slide-content{ 
+        height: 111vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        .slide-body{
+            padding: 25% 25%;
+            text-align: center;
+            @media only screen and (max-width: 900px) {
+                padding: 30% 25%;
+            }
+            @media only screen and (max-width: 600px) {
+                padding: 30% 20%;
+            }
+            @media only screen and (max-width: 400px) {
+                padding: 80% 20%;
+             }
+             @media only screen and (max-width: 300px) {
+                padding: 90% 20%;
+             }
+            #get{
+                color: $primary ;
+            }
+            #become{
+                color: $secondary;
+            }
+            #about{
+                color: $primary;
+            }
+            p{
+                color: $pwhite;
+                font-size: 18px;
+                margin-bottom: 5%;
+                @media only screen and (max-width: 400px) {
+                   display: none;
+                }
+               
+            }
+            a{
+                text-decoration: none;
+                border: none;
+                padding: .8rem 2rem;
+                border-radius: 20px;
+                color: white;
+                cursor: pointer;
+                margin-top: 5%;
+                background-color: $secondary;
+            }
+            .btn-slide-get{
+                background-color: $primary;
+                transition: all ease .3s;
+                &:hover{
+                    transition: all ease .3s;
+                    background-color: $secondary;
+                }
+            }
+            
+            .btn-slide-become,.btn-slide-about{
+                transition: all ease .3s;
+                background-color: $secondary;
+                &:hover{
+                    transition: all ease .3s;
+                    background-color: $primary;
+                }
+            }
+            
+        }
+    } 
+}
+
+.right-arrow-container{
+    position: absolute;
+    right: 0px;
+    background-color: rgba(0,0,0,.2);
+    color: #fff;
+    width: 30px;
+    cursor: pointer;
+    padding: 1%;
+    @media only screen and (max-width: 500px) {
+        padding: 1% 3%;
+      }
+    &:hover .right-arrow{
+        margin-left: 5px; 
+        }
+    .right-arrow{
+        font-size: 30px;
+        transition: all ease-in 300ms;  
+    }
+      
+}
+.left-arrow-container{
+    position: absolute;
+    left: 0px;
+    background-color: rgba(0,0,0,.2);
+    color: #fff;
+    width: 30px;
+    cursor: pointer;
+    padding: 1%;
+    @media only screen and (max-width: 500px) {
+        padding: 1% 3%;
+      }
+    &:hover .left-arrow{
+        margin-left: -5px; 
+        }
+    .left-arrow{
+        font-size: 30px;
+        transition: all ease-in 300ms;   
+    }
+      
+}

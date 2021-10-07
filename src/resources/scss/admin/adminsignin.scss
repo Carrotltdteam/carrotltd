@@ -1,0 +1,52 @@
+.adminsignin-container{
+    margin-top: -10%;
+    .signin{
+        padding-top: 10%;
+       background: linear-gradient(to right,$primary,$secondary);
+        height: 100vh;
+        display: grid;
+        place-content:center ;
+        .signin-form{
+            padding: 10% 10% 10% 5%;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            .text{
+                text-align: center;
+                h1{
+                    color: $primary;
+                }
+
+            }
+
+            form{
+                display: grid;
+           
+                .form-control{
+                    padding: .8em;
+                    margin:2% 0%;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $pwhite;
+                    outline: none;
+                    width: 100%;
+                }
+                
+                .btn-signin{
+                    margin: 2% 0%;
+                    justify-self: center;
+                    border: none;
+                    font-size: 18px;
+                    padding: .6rem 2rem;
+                    border-radius: 30px;
+                    background-color: $primary;
+                    color: white;
+                    transition: all ease .3s;
+                    cursor: pointer;&:hover{
+                        transition: all ease .3s;
+                        background-color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
