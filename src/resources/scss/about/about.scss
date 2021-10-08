@@ -38,6 +38,8 @@
         .body-1-left{
             h1,h3{
                 color: $primary;
+                margin:3% 0%;
+                
             }
             p{
                 color: grey;
@@ -73,6 +75,7 @@
             .body-2-right{
                 h1,h3{
                     color: $primary;
+                    margin:3% 0%;
                 }
                 div{
                     span{
@@ -120,6 +123,10 @@
             align-self: center;
             h3{
                 color: $primary;
+                margin:3% 0%;
+                @media only screen and (max-width: 400px) {
+                    margin: 10% 0%;
+                }
             }
             p{
                 color: grey;

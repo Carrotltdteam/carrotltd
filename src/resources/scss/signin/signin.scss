@@ -1,7 +1,7 @@
 .signin-container{
-    margin-top: -10%;
+  
     .signin{
-        padding-top: 10%;
+       
         background: linear-gradient(to right,$secondary,$primary);
         height: 100vh;
         display: grid;
@@ -30,23 +30,24 @@
                     outline: none;
                     width: 100%;
                 }
-                .reset{
-                    display: hidden;
-                    padding: .8em;
-                    margin:2% 0%;
-                }
-               
-                .reset-link{
-                    text-decoration: none;
-                    cursor: pointer;
-                    color: $secondary;
-                    transition: all ease-in-out .3s;
-                    &:hover{
-                        transition: all ease-in-out .3s;
+                .other-links{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 1%;
+                    .reset-link,.signup-link{
+                        text-decoration: none;
+                        cursor: pointer;
                         color: $primary;
-
+                        transition: all ease-in-out .3s;
+                        &:hover{
+                            transition: all ease-in-out .3s;
+                            color: $secondary;
+    
+                        }
                     }
+
                 }
+                
                
                 .btn-signin{
                     margin: 2% 0%;

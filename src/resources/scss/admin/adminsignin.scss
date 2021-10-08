@@ -1,9 +1,9 @@
 .adminsignin-container{
-    margin-top: -10%;
+    background: linear-gradient(to right,$primary,$secondary);
+    background-size: cover;
+    height: 100vh;    
     .signin{
-        padding-top: 10%;
-       background: linear-gradient(to right,$primary,$secondary);
-        height: 100vh;
+        padding-top: 30vh;
         display: grid;
         place-content:center ;
         .signin-form{

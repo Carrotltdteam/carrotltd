@@ -3,6 +3,7 @@ import Fade from 'react-reveal/Fade'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
 import app from '../../config/fire'
+import { NavLink } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 import {getFirestore, getDoc,setDoc,doc } from 'firebase/firestore'
 const auth=getAuth(app)
@@ -26,7 +27,7 @@ if (docSnap.exists()) {
 } else {
 
     if (this.state.accountType===0) {
-        const type="Admin"
+        const type="Hire"
         await setDoc(doc(db, "users", e.target.email.value), {
             contact:{
                 name: e.target.name.value,
@@ -157,6 +158,7 @@ this.setState({
                                 >Become a Tutor</div>
                             </div>
                             <button className="btn-signup">Sign Up</button>
+                            <NavLink to="/signin" className="signin-link"> Sign In Here</NavLink>
                         </form>
                     </div>
                    

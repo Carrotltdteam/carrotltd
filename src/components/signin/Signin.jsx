@@ -59,7 +59,12 @@ SignIn=(e)=>{
                             className="password form-control" required/>
                         </div>
                         <button className="btn-signin">Login In</button>
+                        <div className="other-links">
                         <NavLink to="/reset" className="reset-link">Forgotten Password?</NavLink>
+                        <NavLink to="/signup" className="signup-link"> Sign Up Here</NavLink>
+
+                        </div>
+                        
                     </form>
                 </div>
                

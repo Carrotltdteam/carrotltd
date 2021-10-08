@@ -10,13 +10,13 @@
         background-repeat: no-repeat;
         background-position: center;
         .slide-body{
-            padding: 25% 25%;
+            padding: 34% 25%;
             text-align: center;
             @media only screen and (max-width: 900px) {
-                padding: 30% 25%;
+                padding: 50% 25%;
             }
             @media only screen and (max-width: 600px) {
-                padding: 30% 20%;
+                padding: 60% 20%;
             }
             @media only screen and (max-width: 400px) {
                 padding: 80% 20%;
@@ -33,16 +33,23 @@
             #about{
                 color: $primary;
             }
+            h1{
+                @media only screen and (max-width: 500px) {
+                    margin-bottom: 10%;
+                 }
+                
+            }
             p{
                 color: $pwhite;
                 font-size: 18px;
                 margin-bottom: 5%;
-                @media only screen and (max-width: 400px) {
+                @media only screen and (max-width: 500px) {
                    display: none;
                 }
                
             }
             a{
+                
                 text-decoration: none;
                 border: none;
                 padding: .8rem 2rem;
@@ -62,6 +69,7 @@
             }
             
             .btn-slide-become,.btn-slide-about{
+                
                 transition: all ease .3s;
                 background-color: $secondary;
                 &:hover{
@@ -81,9 +89,9 @@
     color: #fff;
     width: 30px;
     cursor: pointer;
-    padding: 1%;
+    // padding: 1%;
     @media only screen and (max-width: 500px) {
-        padding: 1% 3%;
+        // padding: 1% 3%;
       }
     &:hover .right-arrow{
         margin-left: 5px; 
@@ -101,9 +109,9 @@
     color: #fff;
     width: 30px;
     cursor: pointer;
-    padding: 1%;
+    // padding: 1%;
     @media only screen and (max-width: 500px) {
-        padding: 1% 3%;
+        // padding: 1% 3%;
       }
     &:hover .left-arrow{
         margin-left: -5px; 

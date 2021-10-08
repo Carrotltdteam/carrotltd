@@ -62,7 +62,17 @@
                         background-color: $primary;
                     }
                 }
-                
+                .signin-link{
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: $primary;
+                    transition: all ease-in-out .3s;
+                    &:hover{
+                        transition: all ease-in-out .3s;
+                        color: $secondary;
+
+                    }
+                }
                 .btn-signup{
                     margin: 2% 0%;
                     justify-self: center;
