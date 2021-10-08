@@ -1,5 +1,4 @@
 .details{
-    margin: 2% 0%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: 1px solid $primary ;
@@ -7,7 +6,6 @@
     background-color: rgba(218, 216, 216, 0.37);
     border-radius: 10px;
     .detail{
-        margin: 2% 0%;
         text-transform: uppercase;
     }
     .email{
@@ -15,7 +13,6 @@
     }
 }
 .bio{
-    margin: 2% 0%;
     border: 1px solid $primary ;
     padding:2% 3%;
     background-color: rgba(218, 216, 216, 0.37);
@@ -31,9 +28,18 @@
     padding:2% 3%;
     background-color: rgba(218, 216, 216, 0.37);
     border-radius: 10px;
-    width: 50%;
+    width: 100%;
     text-transform: uppercase;
     overflow-wrap: break-word;
-    margin-bottom: 2%;
+    margin: 1% 0%;
+    p{
+        margin: 2% 0%;
+    }
 
+}
+.overview-subject{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+    margin-bottom: 3%;
 }

@@ -1,12 +1,35 @@
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
 import app from '../../../config/fire';
-import {getFirestore,doc,updateDoc,} from 'firebase/firestore'
+import {getFirestore,doc,updateDoc,onSnapshot} from 'firebase/firestore'
 import { getAuth } from "firebase/auth";
 const auth = getAuth(app);
 const db=getFirestore(app)
  class Plan extends Component {
+     constructor(props) {
+         super(props)
+     
+         this.state = {
+              plan:""
+         }
+     }
+     
+componentDidMount(){
+    onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
+        if(doc.data()!=null){
+            this.setState({
+                plan:doc.data().plan.name
+            })
+        }
+            else{
+                alert("Error. Reload")
+            }
 
+      
+    })
+        
+    
+}
 
     ChangePlan= async(e)=>{
         e.preventDefault()
@@ -27,17 +50,17 @@ const db=getFirestore(app)
 
         }
         const theRef = doc(db, "users", auth.currentUser.email);
-    // Set the "capital" field of the city 'DC'
     await updateDoc(theRef, {
       plan: {
-       
         name:e.target.name,
         price:price,
       }    
     }).then(()=>{
         alert("Update Succesful")
 
-    });
+    }).catch((error)=>{
+        alert(error.code)
+    })
     
     }
 
@@ -47,18 +70,22 @@ const db=getFirestore(app)
                 <div className="plan-container">
                     <div className="heading">
                         <h1>CLASS PLAN</h1>
-                        <h4>
+                        <br />  
+                        <p>
                             Hello , Please select your class plan in order to deduce your tuition. 
                             If you need help coming up with the appropiate plan for your budget 
                             please call 07030050354
-                        </h4>
+                        </p>
+                        <br />
+
                         <p>
                             Please note that the price shown below is for one tutor in one class. 
                             Depending on your subject selection, you might need an additional class. 
                             On such cases, prices would vary from what is displayed
                         </p>
                     </div>
-                    
+                    <h1 id="current-plan">CURRENT PLAN : &nbsp;{this.state.plan}</h1>
+                    <br />
                     <div className="plan">
                         <div className="card starter">
                             <div className="starter-card-heading">
@@ -123,6 +150,7 @@ const db=getFirestore(app)
                         </div>
 
                     </div>
+                   
                     
                 </div>
             </Fade>

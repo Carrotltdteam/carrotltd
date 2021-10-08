@@ -20,10 +20,8 @@ const db=getFirestore(app)
 
     SubmitData=async(e)=>{
         e.preventDefault()
-        console.log()
         const theRef = doc(db, "users", auth.currentUser.email);
     
-    // Set the "capital" field of the city 'DC'
     await updateDoc(theRef, {
         education: {
             completed:true,
@@ -36,7 +34,11 @@ const db=getFirestore(app)
             certUrl:this.state.certURL
            
           }
-    });
+    }).then(()=>{
+
+    }).catch(error=>{
+        alert(error.code)
+    })
 } 
 
 
@@ -48,21 +50,40 @@ FileSelectHandler=(e)=>{
 
 SubmitUploadedFile=(e)=>{
     e.preventDefault()
-    const storageRef = ref(storage, "Certificates/"+auth.currentUser.email+"_"+this.state.selectedFile.name);
+    if(this.state.selectedFile===null)
+    {
+      alert("Please select an image")
+    }
+    else{
+
+      if(this.state.selectedFile.type==="image/png"||
+      this.state.selectedFile.type==="image/jpeg"){
+         const storageRef = ref(storage, "Certificates/"+auth.currentUser.email+"_"+this.state.selectedFile.name);
     const uploadTask = uploadBytesResumable(storageRef, this.state.selectedFile);
     uploadTask.on('state_changed', 
     (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log('Upload is ' + progress + '% done');
+      const progress = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      document.getElementById("progress").innerHTML=progress+"%"
+     
     }, 
     (error) => {
+      alert(error.code)
     }, 
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          this.setState({certURL:downloadURL,uploaded:true})
-      });
+          this.setState({certURL:downloadURL})
+      
+      }).catch((error) => {
+        alert(error.code)
+        });
     }
-  );
+  )
+      }else{
+        alert("Please select an image")
+       
+      }
+      
+    }
 }
 
 
@@ -121,6 +142,7 @@ SubmitUploadedFile=(e)=>{
                             </label>
                             <div className="btn-container">
                              <input onClick={this.SubmitUploadedFile} value="upload" type="submit"className="btn-submit" />
+                             <p id="progress"></p>
                             </div>
                         </div>
                         <div className="btn-container">

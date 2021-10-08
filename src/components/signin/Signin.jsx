@@ -14,9 +14,6 @@ const auth = getAuth();
          }
      }
      
-
-
-
 SignIn=(e)=>{     
     e.preventDefault()  
     setPersistence(auth, browserSessionPersistence )
@@ -26,7 +23,7 @@ SignIn=(e)=>{
         // ...
     })
     .catch((error) => {
-       console.log(error.code)
+      alert(error.code)
     });
 }
 
@@ -46,7 +43,7 @@ SignIn=(e)=>{
                
                 <div className="signin-form">
                 <div className="text">
-                    <h1>Login to Your Carot Account</h1>
+                    <h1>Login to Your Carrot Account</h1>
                     
                 </div>
                     <form onSubmit={this.SignIn}>

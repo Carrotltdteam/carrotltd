@@ -22,7 +22,6 @@ const db=getFirestore(app)
     SubmitData=async(e)=>{
         e.preventDefault()
         const theRef = doc(db, "users", auth.currentUser.email);
-    // Set the "capital" field of the city 'DC'
     var temp=this.props.data.basic
     await updateDoc(theRef, {
       basic: {
@@ -59,11 +58,13 @@ const db=getFirestore(app)
        
         
         
-          
+        alert("Update Successfuul")
        
+      }).catch((error)=>{
+        alert(error.code)
       })
 
-      alert("Update Successfuul")
+      
     
 } 
 
@@ -75,14 +76,24 @@ FileSelectHandler=(e)=>{
 
 SubmitUploadedFile=(e)=>{
     e.preventDefault()
-    const storageRef = ref(storage, "profilePics/"+auth.currentUser.email+"_"+this.state.selectedFile.name);
+    if(this.state.selectedFile===null)
+    {
+      // alert("Please select an image")
+    }
+    else{
+
+      if(this.state.selectedFile.type==="image/png"||
+      this.state.selectedFile.type==="image/jpeg"){
+         const storageRef = ref(storage, "profilePics/"+auth.currentUser.email+"_"+this.state.selectedFile.name);
     const uploadTask = uploadBytesResumable(storageRef, this.state.selectedFile);
     uploadTask.on('state_changed', 
     (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log('Upload is ' + progress + '% done');
+      const progress = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      document.getElementById("progress").innerHTML=progress+"%"
+     
     }, 
     (error) => {
+      alert(error.code)
     }, 
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -91,15 +102,20 @@ SubmitUploadedFile=(e)=>{
             photoURL: downloadURL 
           }).then( () => {
             this.setState({uploaded:true})
-          }).catch((error) => {
-           console.log(error.message)
-          });
-      });
+          })
+      }).catch((error) => {
+        alert(error.code)
+        });
     }
-  );
+  )
+      }else{
+        alert("Please select an image")
+       
+      }
+      
+    }
+
 }
-
-
     render() {
         return (
             <Fade duration={1500}>            
@@ -113,6 +129,7 @@ SubmitUploadedFile=(e)=>{
                             </label>
                             <div className="btn-container">
                             <input onClick={this.SubmitUploadedFile}  type="submit"className="btn-submit" value="Upload" />
+                           <p id="progress"></p>
                             </div>
                             </form>
                         </div>

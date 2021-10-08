@@ -38,7 +38,7 @@ export class App extends Component {
          } else {
            this.setState({
              userLoggedIn:true,
-             user:{}
+             user:user
            })  
          }
         

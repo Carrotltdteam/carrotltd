@@ -10,6 +10,7 @@ const auth = getAuth();
 
         sendPasswordResetEmail(auth, e.target.email.value)
   .then(() => {
+      alert("Email Sent. Please Check your Mailbox")
       window.location.assign("/signin")
       
   })
@@ -17,7 +18,8 @@ const auth = getAuth();
     const errorCode = error.code;
    alert(errorCode)
   });
-    }
+}
+
     render() {
         return (
           

@@ -75,10 +75,8 @@ GetDetails=()=>{
            
 
         }else{
-            console.log("Error Getting data")
-        }
-
-        
+            alert("Error Reload")
+        }    
     });
 }    
   

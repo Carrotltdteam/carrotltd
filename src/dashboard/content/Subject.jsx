@@ -46,8 +46,14 @@ const db=getFirestore(app)
                         subject_name:e.target.subject_name.value  
                        }
                 } 
-             });
-             document.getElementById([e.target.name]).style.display = "none";
+             }).then(()=>{
+                document.getElementById([e.target.name]).style.display = "none";
+                alert("Update Sucessful")
+
+             }).catch(error=>{
+                 alert(error.code)
+             })
+             
              
             
 } 
@@ -60,14 +66,17 @@ SetSubject=async(e)=>{
             ...this.state.subject,
              completed:true
             }
-         });
+         }).then(()=>{
+             
+         }).catch(error=>{
+             alert(error.code)
+         })
 
 }
 
 
     render() {
         const length=this.state.show
-       
         const items = []
         for (var index=1; index<=length;index++) {
             items.push( <Fade  key={index} duration={1500} ><form id={`subject_`+index} name={`subject_`+index}  onSubmit={this.SubmitData} className="subjects">
@@ -105,9 +114,7 @@ SetSubject=async(e)=>{
             </div>
             <div className="btn-container">
                 <input type="submit" value="Submit" className="btn-submit " />
-            </div>
-            
-            
+            </div>   
         </form></Fade>)
           }
         return (

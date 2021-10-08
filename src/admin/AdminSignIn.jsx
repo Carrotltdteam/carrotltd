@@ -24,7 +24,7 @@ SignIn=(e)=>{
         // ...
     })
     .catch((error) => {
-       console.log(error.code)
+       alert(error.code)
     });
 }
 

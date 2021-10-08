@@ -8,6 +8,7 @@ import Fade from 'react-reveal/Fade'
             <div>
                  <div className="welcome">
                     <h1>Welcome to Carrot </h1>
+                    <br />
                     <h2>BASIC INFORMATION</h2>
                 </div>
                 <div className="details">

@@ -2,10 +2,16 @@
     .heading{
         text-align: center;
     }
+    #current-plan{
+        color: $primary;
+        text-transform: uppercase;
+    }
+
     .plan{
         display: grid;
         grid-template-columns: repeat(3,1fr);
         gap:5%;
+       
         .card{
             height: fit-content;
             border: 1px solid $primary;
@@ -106,7 +112,7 @@
                     }
                 }
                 li{
-                    margin:5% 0%;
+                    margin:5% 10%;
                 }
                 .starter-ul{
                     color:#85CD0D;

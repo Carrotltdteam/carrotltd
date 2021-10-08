@@ -63,9 +63,9 @@ SetToTop=()=>{
       behavior: 'smooth'
     });
   };
-    LogOut=()=>{
-        signOut(auth).then(() => {}).catch((error) => {});
-        }  
+LogOut=()=>{
+    signOut(auth).then(() =>{}).catch((error) => {alert(error.code)});
+}  
   
     render() {
         window.addEventListener('scroll', this.SetToTop);

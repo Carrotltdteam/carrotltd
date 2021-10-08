@@ -9,8 +9,6 @@ const db=getFirestore(app)
     SubmitData=async(e)=>{
         e.preventDefault()
         const theRef = doc(db, "users", auth.currentUser.email);
-    
-    // Set the "capital" field of the city 'DC'
     await updateDoc(theRef, {
         
       availability: {
@@ -51,7 +49,11 @@ const db=getFirestore(app)
         to:e.target.saturdayto.value
       }
     }
-    });
+    }).then(()=>{
+
+    }).catch(error=>{
+        alert(error.code)
+    })
 } 
     render() {
         const item=[]

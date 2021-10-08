@@ -62,10 +62,13 @@ const db=getFirestore(app)
                         completed:false  
                        }
                 } 
-             });
-             alert("Subject Added Successful\nYou will be contacted with more details soon\nPrice: "+totalPrice)
-             document.getElementById([e.target.name]).style.display = "none";          
-            
+             }).then(()=>{
+                document.getElementById([e.target.name]).style.display = "none"
+                alert("Subject Added Successful\nYou will be contacted with more details soon\nPrice: "+totalPrice)
+
+             }).catch(error=>{
+                 alert(error.code)
+             })        
 } 
 
     render() {
@@ -154,7 +157,7 @@ const db=getFirestore(app)
                      <h3>If you have filled a subject number previous, 
                          Please do not fill it again. To hire for 
                          another subject, fill another subject number. 
-                         Maximum of 5
+                         Maximum of 4
                     </h3>
                     <div className="subject">
                             
@@ -164,7 +167,6 @@ const db=getFirestore(app)
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="5">5</option>
                         </select>
                           
                         </div>

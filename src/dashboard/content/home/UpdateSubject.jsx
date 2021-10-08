@@ -22,8 +22,7 @@ const db=getFirestore(app)
                 this.setState({subject:doc.data().subject});         
             }   
       else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
+            alert("Error!! Reload")
         }
      })
     }
@@ -46,8 +45,14 @@ const db=getFirestore(app)
                         subject_name:e.target.subject_name.value  
                        }
                 } 
-             });
-             document.getElementById([e.target.name]).style.display = "none";
+             }).then(()=>{
+                document.getElementById([e.target.name]).style.display = "none";
+                alert("Update Successful")
+
+             }).catch(error=>{
+                 alert(error.code)
+             })
+             
              
             
 } 
@@ -60,12 +65,15 @@ SetSubject=async(e)=>{
             ...this.state.subject,
              completed:true
             }
-         });
-         alert("Update Successfuul")
+         }).then(()=>{
+            alert("Update Successfuul")
+
+         }).catch(error=>{
+             alert(error.code)
+         })
+         
 
 }
-
-
     render() {
         const length=this.state.show
        
@@ -105,8 +113,8 @@ SetSubject=async(e)=>{
                 <input required type="text"placeholder="Subject Name" name="subject_name" className="form-control subject-name" />
             </div>
             <div className="btn-container">
-                                <input type="submit" value="Submit" className="btn-submit " />
-                            </div>
+                <input type="submit" value="Submit" className="btn-submit " />
+            </div>
             
             
         </form></Fade>)

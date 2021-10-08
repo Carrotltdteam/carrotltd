@@ -42,12 +42,11 @@ SetToTop=()=>{
     });
   };
     LogOut=()=>{
-        signOut(auth).then(() => {}).catch((error) => {});
+        signOut(auth).then(() =>{window.location.assign("/admin")}).catch((error) => {alert(error.code)});
         }  
   
     render() {
         window.addEventListener('scroll', this.SetToTop);
-        console.log(this.state.toRender)
         return (
             <>
             <Fade>

@@ -7,34 +7,10 @@ const db=getFirestore(app)
  class Bank extends Component {
 
 
-// componentDidMount(){
-//     this.GetDetails()
-
-// }
-// GetDetails= ()=>{
-//     onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
-//         if(doc.data()!=null){
-//             const data=doc.data()
-//             this.setState({
-//                 accountType:data.contact.accountType,
-//                 data:data,
-//                 completed:data.completed
-//             })
-
-//         }else{
-//             console.log("Error Getting data")
-//         }
-
-        
-//     });
-// }
-
 SubmitData=async(e)=>{
     e.preventDefault()
-    console.log()
     const theRef = doc(db, "users", auth.currentUser.email);
 
-// Set the "capital" field of the city 'DC'
 await updateDoc(theRef, {
   bankReferee: {
     accountNumber:e.target.accountnumber.value,
@@ -48,12 +24,13 @@ await updateDoc(theRef, {
     refOccupation:e.target.refoccu.value,
     refPhone:e.target.refphone.value,
     refRelationship:e.target.refrelate.value,
-    amount:e.target.amount.value
-    
-
-      
+    amount:e.target.amount.value  
   }
-});
+}).then(()=>{
+
+}).catch(error=>{
+    alert(error.code)
+})
 
 }
 

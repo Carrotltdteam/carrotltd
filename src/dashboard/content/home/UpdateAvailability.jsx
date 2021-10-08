@@ -52,16 +52,21 @@ const db=getFirestore(app)
         to:e.target.saturdayto.value
       }
     }
-    });
-    e.target.sunday.checked=false
-    e.target.monday.checked=false
-    e.target.tuesday.checked=false
-    e.target.wednesday.checked=false
-    e.target.thursday.checked=false
-    e.target.friday.checked=false
-   e.target.saturday.checked=false
+    }).then(()=>{
+        e.target.sunday.checked=false
+        e.target.monday.checked=false
+        e.target.tuesday.checked=false
+        e.target.wednesday.checked=false
+        e.target.thursday.checked=false
+        e.target.friday.checked=false
+       e.target.saturday.checked=false
+    
+        alert("Update Successfuul")
 
-    alert("Update Successfuul")
+    }).catch(error=>{
+        alert(error.code)
+    })
+
 } 
     render() {
         const item=[]

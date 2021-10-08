@@ -21,25 +21,7 @@ class Home extends Component {
              toRender:"home"
         }
     }
-
-// componentDidMount(){
-//     onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
-//         if(doc.data()!=null){
-//             const data=doc.data()
-//             this.setState({
-//                 accountType:data.contact.accountType,
-//                 data:data,
-                
-//             })
-
-//         }else{
-//             console.log("Error Getting data")
-//         }
-
-        
-//     });
-
-// }  
+  
 
 SetToRender=(e)=>{
     this.setState({toRender:e.target.name})
@@ -63,12 +45,12 @@ SetToTop=()=>{
     });
   };
     LogOut=()=>{
-        signOut(auth).then(() => {}).catch((error) => {});
+        signOut(auth).then(() =>{}).catch((error) => {alert(error.code)});
         }  
   
     render() {
         window.addEventListener('scroll', this.SetToTop);
-        console.log(this.state.toRender)
+        
         return (
             <>
             <Fade>

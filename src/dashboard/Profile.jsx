@@ -57,7 +57,7 @@ GetDetails=()=>{
             })
 
         }else{
-            console.log("Error Getting data")
+           alert("Error Reload")
         }
 
         
@@ -82,7 +82,7 @@ GetDetails=()=>{
         });
       };
     LogOut=()=>{
-        signOut(auth).then(() => {}).catch((error) => {});
+        signOut(auth).then(() =>{window.location.assign("/")}).catch((error) => {alert(error.code)});
         }  
   
     render() {

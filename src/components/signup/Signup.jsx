@@ -23,7 +23,6 @@ const db=getFirestore(app)
         const docRef = doc(db, "users", e.target.email.value);
         const docSnap = await getDoc(docRef);
 if (docSnap.exists()) {
-  console.log("Document data: Found");
 } else {
 
     if (this.state.accountType===0) {
@@ -52,7 +51,10 @@ if (docSnap.exists()) {
         updateProfile(user, {
             displayName: type,})
         .then( () => {}).catch((error) => {
-            console.log(error.message)});})         
+            alert(error.code)});
+        }).catch((error)=>{
+            alert(error.code)
+        })         
     }
 
     else if (this.state.accountType===1) {
@@ -92,8 +94,11 @@ if (docSnap.exists()) {
         updateProfile(user, {
             displayName: type,
         }).then( () => {}).catch((error) => {
-        console.log(error.message)
-        });}) 
+            alert(error.code)
+        })
+    }).catch((error)=>{
+        alert(error.code)
+    })
     }
   
 }

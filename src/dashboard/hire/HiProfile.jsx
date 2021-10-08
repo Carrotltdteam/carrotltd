@@ -48,11 +48,11 @@ GetDetails=()=>{
             this.setState({
                 accountType:data.contact.accountType,
                 data:data,
-                // completed:data.completed
+               
             })
 
         }else{
-            console.log("Error Getting data")
+            alert("Error Reload")
         }
 
         
@@ -76,7 +76,7 @@ SetToTop=()=>{
         });
       };
     LogOut=()=>{
-        signOut(auth).then(() => {}).catch((error) => {});
+        signOut(auth).then(() =>{window.location.assign("/")}).catch((error) => {alert(error.code)});
         }  
   
     render() {
