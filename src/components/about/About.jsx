@@ -27,25 +27,25 @@ function About() {
                     <h1>About Carrot</h1>
                     <p>
                     Carrot is a Nigeria base tutoring company with a 
-                    presence in United Kingdom that specializes in connecting 
-                    you with professional home tutors near you. Our interest 
-                    is to break from the norm of formal education by providing 
-                    Tutors for basically anything a client may wish to learn. 
-                    From English language and grammar structuring to phonetics, 
-                    sounds, and pronunciation, learners from the age of 4 can 
-                    easily be signed up by their parents or wards online for 
-                    classes that will take place either physically or online 
-                    at the comfort of the child/learner.
+                    presence in Nigeria that specializes in connecting 
+                    you with professional home tutors near you. 
+                    Our interest is to break from the norm of formal 
+                    education by providing Tutors for basically anything 
+                    a client may wish to learn in a carrot method.
+                    From English language and grammar structuring to 
+                    phonetics, sounds, and pronunciation, learners 
+                    from the age of 4 can easily be signed up by 
+                    their parents or wards online for classes that 
+                    will take place either physically or online at the comfort of the child/learner.
                     </p>
                     <h3>Give your child the educational benefit of competing in today's globe</h3>
                     <p>
-                    Here in Carrot, We believe that real learning requires 
-                    a private strategy because no two learners are precisely 
-                    the same. Therefore, through our various tutorial packages, 
-                    which include one-on-one tutorial sessions, group learners 
-                    tutorial sessions, and adult group tutorial sessions, 
-                    we strive to provide our customers with very engaging 
-                    teaching procedures.
+                        Here in Carrot, We believe that real learning requires 
+                        a private strategy because no two learners are precisely 
+                        the same. Therefore, through our various tutorial packages, 
+                        which include one-on-one tutorial sessions, group learners 
+                        tutorial sessions, and adult group tutorial sessions, 
+                        we strive to provide our customers with very engaging teaching procedures.
                     </p>
                 </div>
                 <div className="body-1-right">

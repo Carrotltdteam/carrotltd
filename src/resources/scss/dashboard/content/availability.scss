@@ -28,11 +28,16 @@
             grid-template-columns: 1fr .8fr .8fr;
             gap: 3%;
            margin: 2% 0%;
+           @media only screen and (max-width: 600px) {
+            margin:10% 0%;
+            grid-template-columns: 1fr ;
+         }
             #label{
                 display: grid;
                 grid-template-columns: 1fr 1.5fr ;
                 .check{
                     transform: scale(1.5);
+                    
                 }
             }
             

@@ -2,7 +2,10 @@
   
     .signin{
        
-        background: linear-gradient(to right,$secondary,$primary);
+        background-image:url("../../images/back.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
         height: 100vh;
         display: grid;
         place-content:center ;

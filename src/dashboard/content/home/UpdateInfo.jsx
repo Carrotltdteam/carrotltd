@@ -78,7 +78,7 @@ SubmitUploadedFile=(e)=>{
     e.preventDefault()
     if(this.state.selectedFile===null)
     {
-      // alert("Please select an image")
+      alert("Please select an image")
     }
     else{
 
@@ -138,43 +138,50 @@ SubmitUploadedFile=(e)=>{
                        
                         <div className="state-lga">
                             <select name="state" required className="state form-control" placeholder="Select state" >
-                                <option selected="">Select state of residence</option>
-                                <option value="Abia">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option>
-                                <option value="">Abia</option> 
+                              <option selected="selected">- Select State Of Residence -</option>
+                              <option value="Abuja FCT">Abuja FCT</option>
+                              <option value="Abia">Abia</option>
+                              <option value="Adamawa">Adamawa</option>
+                              <option value="Akwa Ibom">Akwa Ibom</option>
+                              <option value="Anambra">Anambra</option>
+                              <option value="Bauchi">Bauchi</option>
+                              <option value="Bayelsa">Bayelsa</option>
+                              <option value="Benue">Benue</option>
+                              <option value="Borno">Borno</option>
+                              <option value="Cross River">Cross River</option>
+                              <option value="Delta">Delta</option>
+                              <option value="Ebonyi">Ebonyi</option>
+                              <option value="Edo">Edo</option>
+                              <option value="Ekiti">Ekiti</option>
+                              <option value="Enugu">Enugu</option>
+                              <option value="Gombe">Gombe</option>
+                              <option value="Imo">Imo</option>
+                              <option value="Jigawa">Jigawa</option>
+                              <option value="Kaduna">Kaduna</option>
+                              <option value="Kano">Kano</option>
+                              <option value="Katsina">Katsina</option>
+                              <option value="Kebbi">Kebbi</option>
+                              <option value="Kogi">Kogi</option>
+                              <option value="Kwara">Kwara</option>
+                              <option value="Lagos">Lagos</option>
+                              <option value="Nassarawa">Nassarawa</option>
+                              <option value="Niger">Niger</option>
+                              <option value="Ogun">Ogun</option>
+                              <option value="Ondo">Ondo</option>
+                              <option value="Osun">Osun</option>
+                              <option value="Oyo">Oyo</option>
+                              <option value="Plateau">Plateau</option>
+                              <option value="Rivers">Rivers</option>
+                              <option value="Sokoto">Sokoto</option>
+                              <option value="Taraba">Taraba</option>
+                              <option value="Yobe">Yobe</option>
+                              <option value="Zamfara">Zamfara</option>
                             </select>
                             <input name="lga" required type="text" className="form-control lga" placeholder="Enter LGA of residence" />
                         </div>
                         <div className="gender-dob">
                             <select name="gender" required className="gender form-control" id="">
-                            <option value="">Select Gender</option>
+                            <option selected="">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             </select>
@@ -183,7 +190,7 @@ SubmitUploadedFile=(e)=>{
                         </div>
                         <div className="bio-container">
                             <textarea name="bio" required id="bio" cols="30" rows="10" maxLength="300" placeholder="Write A Short Bio About Yourself"/>
-                            <input name="phone" required type="phone" maxLength={11} className="form-control phone" placeholder="Enter Phone Number" />
+                            <div><input name="phone" required type="phone" maxLength={11} className="form-control phone" placeholder="Enter Phone Number" /></div>
                         </div>
                         
                         

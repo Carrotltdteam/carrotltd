@@ -6,6 +6,9 @@
     padding:2% 3%;
     background-color: rgba(218, 216, 216, 0.37);
     border-radius: 10px;
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
     .detail{
         margin: 2% 0%;
         text-transform: uppercase;

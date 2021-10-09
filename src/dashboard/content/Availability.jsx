@@ -83,6 +83,9 @@ const db=getFirestore(app)
                 case 19:
                     item.push( <option value="7 PM">7 PM</option>)
                     break;
+                case 8:
+                    item.push( <option selected={index+" AM"}>{index+" AM"}</option>)
+                    break;
                 default:
                     item.push( <option value={index+" AM"}>{index+" AM"}</option>)
 

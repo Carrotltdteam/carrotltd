@@ -50,8 +50,6 @@ import Fade from 'react-reveal/Fade'
                         ))}
                     </div>))
                     }
-                
-
                     </div>
                    
                 

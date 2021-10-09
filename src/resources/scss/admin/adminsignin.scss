@@ -1,5 +1,7 @@
 .adminsignin-container{
-    background: linear-gradient(to right,$primary,$secondary);
+    background-image:url("../../images/back.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
     background-size: cover;
     height: 100vh;    
     .signin{

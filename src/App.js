@@ -29,7 +29,7 @@ export class App extends Component {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user.displayName)
+       
         if (user.displayName==="Admin") {
           this.setState({
             adminLoggedIn:true,
@@ -60,7 +60,7 @@ export class App extends Component {
  
 
   render() {
-    console.log(this.state.userLoggedIn)
+   
   return (
     <div className="App">
       <BrowserRouter>

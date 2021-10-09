@@ -81,14 +81,14 @@ const db=getFirestore(app)
             <h2>Subject {index}</h2>
             <div  className="group-class">
                <select required name="group" className="form-control" >
-                   <option value="">Subject Group</option>
+                   <option selected="">Subject Group</option>
                    <option value="Academic">Academic</option>
                    <option value="Music">Music</option>
                    <option value="Languages">Languages</option>
                    <option value="Others">Others</option>
                </select>
                <select required name="class"  className="form-control" id="">
-                   <option value="">Subject Class</option>
+                   <option selected="">Subject Class</option>
                    <option value="Nursery">Nursery</option>
                    <option value="Upper Primary">Upper Primary</option>
                    <option value="Lower Primary">Lower Primary</option>
@@ -109,7 +109,7 @@ const db=getFirestore(app)
             </div>
             <div  className="group-class">
                <select required name="perweek" className="form-control" >
-                   <option value="">Classes per Week</option>
+                   <option selected="">Classes per Week</option>
                    <option value="1">1</option>
                    <option value="2">2</option>
                    <option value="3">3</option>
@@ -119,7 +119,7 @@ const db=getFirestore(app)
                    <option value="7">7</option>
                </select>
                <select required name="hours"  className="form-control" id="">
-                   <option value="">Hours per Class</option>
+                   <option selected="">Hours per Class</option>
                    <option value="1">1 Hour</option>
                    <option value="2">2 Hours</option>
                    <option value="3">3 Hours</option>
@@ -162,7 +162,7 @@ const db=getFirestore(app)
                     <div className="subject">
                             
                         <select required name="subject" onChange={this.SetSelect} className="form-control" id="">
-                            <option value="1">How Many Subject Do you Need</option>
+                            <option selected="1">How Many Subject Do you Need</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

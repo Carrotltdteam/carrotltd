@@ -98,6 +98,15 @@ SubmitUploadedFile=(e)=>{
                 <h1>EDUCATION</h1>
                 <div className="form-container">
                     <form onSubmit={this.SubmitData} >
+                         <div className={this.state.uploaded===false?"cert-upload":"hide"}>
+                            <label htmlFor="">Upload Certificate: &nbsp;
+                                <input onChange={this.FileSelectHandler} required type="file"  name="upload" className="upload" />
+                            </label>
+                            <div className="btn-container">
+                             <input onClick={this.SubmitUploadedFile} value="upload" type="submit"className="btn-submit" />
+                             <p id="progress"></p>
+                            </div>
+                        </div>
                         <div className="school-dept">
                             <input type="text" required name="school"className="form-control school" placeholder="School of Recent Degree" />
                             <input type="text" required name="dept" className="form-control dept"placeholder="Department of Study" />
@@ -136,15 +145,7 @@ SubmitUploadedFile=(e)=>{
                            {year}
                             </select>
                         </div>
-                        <div className={this.state.uploaded===false?"cert-upload":"hide"}>
-                            <label htmlFor="">Upload Certificate: &nbsp;
-                                <input onChange={this.FileSelectHandler} required type="file"  name="upload" className="upload" />
-                            </label>
-                            <div className="btn-container">
-                             <input onClick={this.SubmitUploadedFile} value="upload" type="submit"className="btn-submit" />
-                             <p id="progress"></p>
-                            </div>
-                        </div>
+                       
                         <div className="btn-container">
                             <input  type="submit"className="btn-submit" />
                         </div>

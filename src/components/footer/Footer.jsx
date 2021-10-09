@@ -25,7 +25,7 @@ function Footer() {
                     <h2>Reach Out To Us</h2>
                     <div className="contact-info"><span><FaPhone/></span> 07030050354</div>
                     <div className="contact-info"><span><FiMail/></span> <NavLink to="#"> adesholaadeoye4@gmail.com</NavLink></div>
-                    <div className="contact-info"><span><FaComments/></span> <NavLink to="#"> Chat on Whatsapp</NavLink></div>
+                    <div className="contact-info"><span><FaComments/></span> <a target="_blank" rel="noreferrer" href="https://wa.me/2348080507630?text=My%20name%20is%20________________%20I%20want%20to%20know%20more%20about%20Carrot."> Chat on Whatsapp</a></div>
                     <div className="contact-info"><span><FaComments/></span> <NavLink to="#"> Chat on Messenger</NavLink></div>
                     <div className="contact-info"><span><FaQuestion/></span> <NavLink to="#"> Frequently asked questions</NavLink></div>
 
