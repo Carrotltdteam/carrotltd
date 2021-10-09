@@ -68,7 +68,7 @@
          
       }
           .btn-logout{
-            align-self: end;
+            
             border: none;
             padding: 5% 7%;
             font-size: 15px;
@@ -76,6 +76,10 @@
             color: $pwhite;
             cursor: pointer;
             transition: all ease .3s;
+            @media only screen and (max-width: 700px) {
+              align-self: start;
+             
+           }
             &:hover{
                 color: $primary;
               transition: all ease .3s;
