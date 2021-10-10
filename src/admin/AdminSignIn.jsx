@@ -16,7 +16,12 @@ const auth = getAuth();
 
 
 SignIn=(e)=>{     
-    e.preventDefault()  
+    e.preventDefault() 
+    if(e.target.email.value!=="carrotltdteam@gmail.com")
+    {
+        alert("Unauthorized User")
+        return
+    }
     setPersistence(auth, browserSessionPersistence )
     .then(() => {
         // Signed in 

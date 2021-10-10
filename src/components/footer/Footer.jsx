@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../resources/images/logo.png'
-import {FaComments,FaPhone,FaInstagram,FaFacebook,FaTwitter,FaLinkedinIn,FaYoutube,FaQuestion} from 'react-icons/fa'
+import {FaComments,FaPhone,FaInstagram,FaFacebook,FaTwitter,FaLinkedinIn,FaYoutube} from 'react-icons/fa'
 import {FiMail} from 'react-icons/fi'
 import {NavLink} from 'react-router-dom'
 function Footer() {
@@ -11,6 +11,7 @@ function Footer() {
                     <div className="img">
                         <img src={logo} alt="left-icon" />
                     </div>
+                    <br />
                     <p className="left-text">
                         Carrot focuses on connecting potential 
                         learners with skilled tutors. 
@@ -23,16 +24,15 @@ function Footer() {
 
                 <div className="footer-top-middle">
                     <h2>Reach Out To Us</h2>
-                    <div className="contact-info"><span><FaPhone/></span> 07030050354</div>
-                    <div className="contact-info"><span><FiMail/></span> <NavLink to="#"> adesholaadeoye4@gmail.com</NavLink></div>
-                    <div className="contact-info"><span><FaComments/></span> <a target="_blank" rel="noreferrer" href="https://wa.me/2348080507630?text=My%20name%20is%20________________%20I%20want%20to%20know%20more%20about%20Carrot."> Chat on Whatsapp</a></div>
-                    <div className="contact-info"><span><FaComments/></span> <NavLink to="#"> Chat on Messenger</NavLink></div>
-                    <div className="contact-info"><span><FaQuestion/></span> <NavLink to="#"> Frequently asked questions</NavLink></div>
-
+                    <div className="contact-info"><span><FaPhone/></span><a href="tel:07030050354">&nbsp;&nbsp;07030050354</a></div>
+                    <div className="contact-info"><span><FiMail/></span><a href="mailto:carrotltdteam@gmail.com">&nbsp;&nbsp;carrotltdteam@gmail.com</a></div>
+                    <div className="contact-info"><span><FaComments/></span><a target="_blank" rel="noreferrer" href="https://wa.me/2348080507630?text=My%20name%20is%20________________%20I%20want%20to%20know%20more%20about%20Carrot.">&nbsp;&nbsp;Chat on Whatsapp</a></div>
+                    <div className="contact-info"><span><FaComments/></span><a href="/">&nbsp;&nbsp;Chat on Messenger</a></div>
                 </div>
 
                 <div className="footer-top-right">
                     <h2>Subscribe To Our Newsletter</h2>
+                    <br />
                     <form >
                         <div className="form-content">
                             <input type="text" />

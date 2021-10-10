@@ -1,0 +1,27 @@
+.adapproved-container{
+    .tutor-card{
+        margin: 1% 0%;
+        padding: 5% 2%;
+        background-color: #D2C2C5;
+        border: 1px solid $secondary;
+        display: grid;
+        gap:5%;
+        grid-template-columns: .3fr 1fr;
+        .tutor-detail{
+            text-transform: uppercase;
+            display: grid;
+            gap:5%;
+            grid-template-columns: 1fr 1fr;
+            color: $primary;
+        }
+        .tutor-image{
+            place-self: center;
+            
+            img{
+                width: 50%;
+                border-radius: 50%;
+            }
+        }
+       
+    }
+}
