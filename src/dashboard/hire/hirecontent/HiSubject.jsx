@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import emailjs from 'emailjs-com'
 import Fade from 'react-reveal/Fade'
 import {getFirestore,doc,updateDoc,onSnapshot } from 'firebase/firestore'
 import { getAuth } from "firebase/auth";
@@ -11,9 +12,10 @@ const db=getFirestore(app)
      
          this.state = {
               show:1,
-              subject:null,
+              subject:{},
               planPrice:0,
-              plan:null
+              plan:null,
+              contact:""
               
          }
      }
@@ -24,12 +26,12 @@ const db=getFirestore(app)
                 this.setState({
                     subject:doc.data().subject,
                     planPrice:doc.data().plan.price,
-                    plan:doc.data().plan.name
+                    plan:doc.data().plan.name,
+                    contact:doc.data().contact.phone
                 });         
             }   
       else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
+          alert("Error Reload Page")
         }
      })
     }
@@ -62,7 +64,11 @@ const db=getFirestore(app)
                         completed:false  
                        }
                 } 
+                
              }).then(()=>{
+                emailjs.sendForm("service_nihdzjh","template_oa5mu7d",e.target,"user_MQhQ6YXm3I2JEqVCsmp5T").then(res=>
+                    {alert("Email Sent!!!")}
+                ).catch(error=>{alert(error.code)})
                 document.getElementById([e.target.name]).style.display = "none"
                 alert("Subject Added Successful\nYou will be contacted with more details soon\nPrice: "+totalPrice)
 
@@ -79,6 +85,8 @@ const db=getFirestore(app)
         for (var index=1; index<=length;index++) {
             items.push( <Fade  key={index} duration={1500} ><form id={`subject_`+index} name={`subject_`+index}  onSubmit={this.SubmitData} className="subjects">
             <h2>Subject {index}</h2>
+            <input type="text" id="hide" name="email" value={auth.currentUser.email} />
+            <input type="text" id="hide" name="contact" value={this.state.contact} />
             <div  className="group-class">
                <select required name="group" className="form-control" >
                    <option selected="">Subject Group</option>
@@ -170,13 +178,12 @@ const db=getFirestore(app)
                         </select>
                           
                         </div>
-                        <div  className="subjects">
-                           
-                            {items}
-                            
-                           
-                           
+                        <div  className="subjects"> 
+                            {items} 
                         </div>
+                        {/* <div className="btn-right">
+                            <input onClick={this.MakeRequest} type="submit" value="Request" className="btn-submit" />
+                        </div> */}
                         
                      
                  </div>

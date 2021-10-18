@@ -114,7 +114,7 @@ const db=getFirestore(app)
                          </div>
                          <div className="days">
                              <label id="label" htmlFor="">SUNDAY 
-                             <input type="checkbox" onClick={(e)=>{console.log(e.target.checked)}} name="sunday"    className="check" />
+                             <input type="checkbox"  name="sunday"    className="check" />
                              </label>
 
                              <select name="sundayfrom" className="form-control type" id="">

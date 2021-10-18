@@ -13,6 +13,12 @@
             gap:5%;
             grid-template-columns: 1fr 1fr;
             color: $primary;
+            overflow-wrap: break-word;
+            word-break: break-all;
+            .email,.phone{
+            cursor: pointer;
+            }
+            
         }
         .tutor-image{
             place-self: center;

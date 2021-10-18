@@ -37,9 +37,20 @@
     width: 100%;
     text-transform: uppercase;
     overflow-wrap: break-word;
+    word-break: break-all;
     margin: 1% 0%;
     p{
         margin: 2% 0%;
+    }
+    .btn-complete{
+        padding: 2% 3%;
+        background-color: $secondary;
+        color: white;
+        border:none;
+        cursor: pointer;
+        &:hover{
+            background-color: $primary;
+        }
     }
 
 }

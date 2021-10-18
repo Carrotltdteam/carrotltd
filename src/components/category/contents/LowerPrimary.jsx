@@ -30,6 +30,14 @@ function LowerPrimary() {
                             homework support.
                         </p>
                     </div>
+                    <div className="card">
+                        <div className="image"><img src={nursery2} alt="cat-caption" /></div>
+                        <h2>American Pre-Primary &amp; Lower Primary General Tutor</h2>
+                        <p>Hire professional home tutors that would teach you phonics, 
+                            math, handwriting, reading, personal, social and emotional 
+                            development with the American curriculum.
+                        </p>
+                    </div>
                 </div>
             </div>
             

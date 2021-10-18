@@ -1,6 +1,77 @@
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
+import app from '../../../config/fire';
+import {getFirestore,onSnapshot, doc, updateDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+const auth = getAuth(app);
+const db=getFirestore(app)
  class HiOverview extends Component {
+
+
+UpdateSubject=async (data)=>{
+    const theRef = doc(db, "users", auth.currentUser.email);
+    await updateDoc(theRef, {
+        subject:data
+         
+     }).then(()=>{
+        
+        // alert("Update Successful")
+
+     }).catch(error=>{
+         alert(error.code)
+     })
+}
+
+Complete=async(e)=>{
+   const target=e.target.name
+   if(target==="subject_4"){
+    onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
+        if(doc.data()!=null){
+            var newData={...doc.data().subject}
+            delete newData.subject_4
+           this.UpdateSubject(newData)
+        }   
+   
+    })
+
+   }
+
+  else if(target==="subject_3"){
+    onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
+        if(doc.data()!=null){
+            var newData={...doc.data().subject}
+            delete newData.subject_3
+            this.UpdateSubject(newData)
+        } 
+    })
+
+   }
+
+   else if(target==="subject_2"){
+    onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
+        if(doc.data()!=null){
+            var newData={...doc.data().subject}
+            delete newData.subject_2
+            this.UpdateSubject(newData)
+        }   
+    
+    })
+
+   }
+   else if(target==="subject_1"){
+    onSnapshot(doc(db, "users", auth.currentUser.email), (doc) => {
+        if(doc.data()!=null){
+            var newData={...doc.data().subject}
+            delete newData.subject_1
+            this.UpdateSubject(newData)
+        }   
+   
+    })
+
+   }
+   
+}
+
     render() {
      const data=this.props.data.subject
         return (
@@ -48,6 +119,8 @@ import Fade from 'react-reveal/Fade'
                             }
                         </p>
                         ))}
+                        
+                        <input onClick={this.Complete} name={value[0]}type="submit" value="Complete" className="btn-complete" />
                     </div>))
                     }
                     </div>

@@ -21,6 +21,8 @@ const db=getFirestore(app)
 
     SubmitData=async(e)=>{
         e.preventDefault()
+        var lga=e.target.lga.value
+        var state=e.target.state.value
         const theRef = doc(db, "users", auth.currentUser.email);
     var temp=this.props.data.basic
     await updateDoc(theRef, {
@@ -30,9 +32,9 @@ const db=getFirestore(app)
         completed:true,
         dob:e.target.date.value,
         gender:e.target.gender.value,
-        lga:e.target.lga.value,
+        lga:lga.toUpperCase(),
         photoUrl:this.state.photoURL,
-        stateOfOrigin:e.target.state.value,
+        stateOfOrigin:state.toUpperCase(),
       }
      
     })
@@ -138,7 +140,7 @@ SubmitUploadedFile=(e)=>{
                        
                         <div className="state-lga">
                             <select name="state" required className="state form-control" placeholder="Select state" >
-                              <option selected="selected">- Select State Of Residence -</option>
+                              <option defaultValue="selected">- Select State Of Residence -</option>
                               <option value="Abuja FCT">Abuja FCT</option>
                               <option value="Abia">Abia</option>
                               <option value="Adamawa">Adamawa</option>
@@ -181,7 +183,7 @@ SubmitUploadedFile=(e)=>{
                         </div>
                         <div className="gender-dob">
                             <select name="gender" required className="gender form-control" id="">
-                            <option selected="">Select Gender</option>
+                            <option defaultValue="">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             </select>

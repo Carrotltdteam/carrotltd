@@ -82,8 +82,10 @@
                     border-radius: 10px;
                     background-color: transparent;
                     outline: none;
+                    color: $pwhite;
                     transition: all ease .5s;
                     &:focus{
+                        color: $secondary;
                         transition: all ease .5s;
                         background-color: $pwhite;
                     }

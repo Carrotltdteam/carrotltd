@@ -22,8 +22,7 @@ const db=getFirestore(app)
                 this.setState({subject:doc.data().subject});         
             }   
       else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
+          alert("Error Reload Page")
         }
      })
     }

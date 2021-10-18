@@ -21,16 +21,17 @@ const db=getFirestore(app)
     SubmitData=async(e)=>{
         e.preventDefault()
         const theRef = doc(db, "users", auth.currentUser.email);
-    // Set the "capital" field of the city 'DC'
+        var lga=e.target.lga.value
+        var state=e.target.state.value
     await updateDoc(theRef, {
       basic: {
         bio:e.target.bio.value,
         completed:true,
         dob:e.target.date.value,
         gender:e.target.gender.value,
-        lga:e.target.lga.value,
+        lga:lga.toUpperCase(),
         photoUrl:this.state.photoURL,
-        stateOfResidence:e.target.state.value,
+        stateOfResidence:state.toUpperCase(),
       }
     });
 } 

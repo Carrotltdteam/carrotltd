@@ -4,12 +4,14 @@ import {FaAlignJustify} from 'react-icons/fa'
 import app from '../../config/fire';
 import Fade from 'react-reveal/Fade'
 import { getAuth, signOut } from "firebase/auth";
-import {getFirestore, collection, query, where, getDocs } from "firebase/firestore";
+
 import AdOverview from './AdOverview';
 import AdUnapproved from './AdUnapproved';
 import AdApproved from './AdApproved';
+import AdTutorSearch from './AdTutorSearch';
+import AdViewInfo from './AdViewInfo';
 const auth = getAuth(app);
-const db=getFirestore(app)
+
 class AdHome extends PureComponent {
     constructor(props) {
         super(props)
@@ -20,54 +22,12 @@ class AdHome extends PureComponent {
             toTop:false,
             toRender:"home",
             toggle:false,
-            aUsers:0,
-            tUsers:0,
-            uUsers:0
+           
            
         }
     }
 
- componentDidMount(){
-    this.GetTotalUser()
-    this.GetUnapprovedUser()
-    this.GetApprovedUser()
- }
-
-GetTotalUser=async()=>{
-const q = query(collection(db, "users"));
-var totalUser=0
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
-  totalUser++
-})
-this.setState({
-    tUsers:totalUser
-}) 
-}
-
-GetUnapprovedUser=async()=>{
-   const q = query(collection(db, "users"), where("approved", "==", false));
-   var unapprovedTutor=0
-    const querySnapshot = await getDocs(q);
-   querySnapshot.forEach((doc) => {
-      unapprovedTutor++
-   })
-   this.setState({
-    uUsers:unapprovedTutor
-}) 
-}
-
-GetApprovedUser=async()=>{
-    const q = query(collection(db, "users"), where("approved", "==", true));
-    var approvedTutor=0
-     const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-        approvedTutor++
-    })
-    this.setState({
-        aUsers:approvedTutor
-    })
- }
+ 
     handleToggle=()=>{
         const offset=window.innerWidth;
         if(offset<=740){
@@ -121,11 +81,6 @@ LogOut=()=>{
   
     render() {
         window.addEventListener('scroll', this.SetToTop);
-       const userData={
-           total:this.state.tUsers,
-           unapproved:this.state.uUsers,
-           approved:this.state.aUsers
-       }
         return (
             <>
             <Fade>
@@ -141,7 +96,8 @@ LogOut=()=>{
                         <div className="nav-links">
                             <button onClick={this.SetToRender} name="unapproved"  id={this.props.active==="about"?"active":null} className="nav_link" >Unapproved Tutors</button>
                             <button onClick={this.SetToRender} name="approved" id={this.props.active==="about"?"active":null} className="nav_link" >Approved Tutors</button>
-                            <button onClick={this.SetToRender} name="updateInfo" id={this.props.active==="about"?"active":null} className="nav_link" >Update Info</button>
+                            <button onClick={this.SetToRender} name="search" id={this.props.active==="about"?"active":null} className="nav_link" >Search Tutor</button>
+                            <button onClick={this.SetToRender} name="viewinfo" id={this.props.active==="about"?"active":null} className="nav_link" >View Info</button>
                         </div>
     
                         <Fade duration={1000} cascade when={this.state.toTop}>
@@ -155,10 +111,11 @@ LogOut=()=>{
 
                     <div id="content" className="content">
                         { 
-                        // this.state.toRender==="changePlan"?<Plan  data={this.props.data}/>:
+                         this.state.toRender==="viewinfo"?<AdViewInfo/>:
+                        this.state.toRender==="search"?<AdTutorSearch/>:
                         this.state.toRender==="approved"?<AdApproved />:
                         this.state.toRender==="unapproved"?<AdUnapproved/>:
-                        <AdOverview userData={userData}/>
+                        <AdOverview />
                         
                         
                         }

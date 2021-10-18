@@ -23,6 +23,7 @@ const db=getFirestore(app)
         const docRef = doc(db, "users", e.target.email.value);
         const docSnap = await getDoc(docRef);
 if (docSnap.exists()) {
+    alert("User Already Exists!!!")
 } else {
 
     if (this.state.accountType===0) {
@@ -52,6 +53,8 @@ if (docSnap.exists()) {
             displayName: type,})
         .then( () => {}).catch((error) => {
             alert(error.code)});
+
+           
         }).catch((error)=>{
             alert(error.code)
         })         
@@ -96,6 +99,7 @@ if (docSnap.exists()) {
         }).then( () => {}).catch((error) => {
             alert(error.code)
         })
+       
     }).catch((error)=>{
         alert(error.code)
     })

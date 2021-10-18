@@ -20,6 +20,8 @@ SignIn=(e)=>{
     if(e.target.email.value!=="carrotltdteam@gmail.com")
     {
         alert("Unauthorized User")
+        e.target.email.value=""
+        e.target.password.value=""
         return
     }
     setPersistence(auth, browserSessionPersistence )

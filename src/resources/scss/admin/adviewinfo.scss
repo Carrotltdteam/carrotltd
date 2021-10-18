@@ -1,0 +1,71 @@
+.adtutorinfo{
+    .viewcontent{
+        margin-top: 3%;
+        .searchbar{           
+            form{
+                display: flex;
+                width: 60%;
+                .form-control{
+                    padding: 3%;
+                    background-color: #F0ECEC;
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    transition: all ease .3s;
+                    cursor: pointer;
+                }
+                .btn-search{
+                    border: none;
+                    color: $pwhite;
+                    background-color: $secondary;
+                    padding:2% 5%;
+                    &:hover{
+                        background-color: $primary;
+                    }
+                }
+
+            }
+
+
+        }
+
+        .search-result{
+          .btn-container{
+            .btn-submit{
+                border: none;
+                color: $pwhite;
+                background-color: $primary;
+                padding:2% 5%;
+                &:hover{
+                    background-color: $secondary;
+                }
+
+            }
+          }
+            .details{
+                column-gap:2%;
+                text-transform: uppercase;
+                overflow-wrap: break-word;
+                word-break: break-all;
+            }
+
+            .availability{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border: 1px solid $primary ;
+                padding:2% 3%;
+                background-color: rgba(218, 216, 216, 0.37);
+                border-radius: 10px;
+                margin-bottom: 2%;
+                .time-slot{
+                    margin: 2% 0%;
+                    text-transform: uppercase;
+                }
+                @media only screen and (max-width: 600px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+    
+}
