@@ -15,15 +15,18 @@ const db=getFirestore(app)
          this.state = {
               accountType:0,
               loggedIn:false,
+              isLoading:false
          }
      }
 
     SignUp= async(e)=>{
         e.preventDefault()
+        this.setState({isLoading:!this.state.isLoading}) 
         const docRef = doc(db, "users", e.target.email.value);
         const docSnap = await getDoc(docRef);
 if (docSnap.exists()) {
     alert("User Already Exists!!!")
+    this.setState({isLoading:false})
 } else {
 
     if (this.state.accountType===0) {
@@ -53,10 +56,12 @@ if (docSnap.exists()) {
             displayName: type,})
         .then( () => {}).catch((error) => {
             alert(error.code)});
-
+            
            
         }).catch((error)=>{
+            this.setState({isLoading:false})
             alert(error.code)
+
         })         
     }
 
@@ -101,6 +106,7 @@ if (docSnap.exists()) {
         })
        
     }).catch((error)=>{
+        this.setState({isLoading:false})
         alert(error.code)
     })
     }
@@ -166,7 +172,10 @@ this.setState({
                                 className={this.state.accountType===1?"bb active":"bb"} 
                                 >Become a Tutor</div>
                             </div>
-                            <button className="btn-signup">Sign Up</button>
+                            <div className="btn-container">
+                            <button className="btn-signup">Sign Up</button> {this.state.isLoading?<span className="bot"></span>:null}
+                            </div>
+                            
                             <NavLink to="/signin" className="signin-link"> Sign In Here</NavLink>
                         </form>
                     </div>

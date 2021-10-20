@@ -10,17 +10,20 @@ const auth = getAuth();
          super(props)
      
          this.state = {
-              loggedIn:false
+              loggedIn:false,
+              isLoading:false
          }
      }
      
 SignIn=(e)=>{     
-    e.preventDefault()  
+    e.preventDefault() 
+    this.setState({isLoading:!this.state.isLoading}) 
     if(e.target.email.value==="carrotltdteam@gmail.com")
     {
         alert("Unauthorized User")
         e.target.email.value=""
         e.target.password.value=""
+        this.setState({isLoading:false})
         return
     }
     setPersistence(auth, browserSessionPersistence )
@@ -30,6 +33,7 @@ SignIn=(e)=>{
         // ...
     })
     .catch((error) => {
+        this.setState({isLoading:false})
       alert(error.code)
     });
 }
@@ -62,7 +66,11 @@ SignIn=(e)=>{
                             <input type="password" name="password" placeholder="Password" 
                             className="password form-control" required/>
                         </div>
-                        <button className="btn-signin">Login In</button>
+                        <div className="btn-container">
+                        <button className="btn-signin">Login</button> {this.state.isLoading?<span className="bot"></span>:null}
+
+                        </div>
+                        
                         <div className="other-links">
                         <NavLink to="/reset" className="reset-link">Forgotten Password?</NavLink>
                         <NavLink to="/signup" className="signup-link"> Sign Up Here</NavLink>

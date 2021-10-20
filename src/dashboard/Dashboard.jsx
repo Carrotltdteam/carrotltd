@@ -86,22 +86,12 @@ GetDetails=()=>{
             <>
             <Fade>
                 <div className="dashboard-container">
-                   
                   { this.state.accountType==="Become"? <div className="become">
-                      
-                      
                        {this.state.completed===false?<Profile data={this.state.data}/>:<Home data={this.state.data}/>}
                        
-                    </div>:this.state.accountType==="Hire"? <div className="hire">
-                      
-                    
-                        
-                  {/* { Object.entries(data).map(([key,value],i) =>(Object.entries(value.contact).map((key)=><p key={key[0]}>{key[0]}:<span>{key[1]===false?"false":key[1]===true?"true":key[1]}</span></p>)))} */}
-                      
+                    </div>:this.state.accountType==="Hire"? <div className="hire">                      
                        {this.state.completed===false?<HiProfile data={this.state.data}/>:<HiHome data={this.state.data}/>}
-                        
-                        
-                    </div>:<h1>&nbsp;&nbsp;&nbsp;Loading...</h1>}
+                    </div>:<div id="loader"></div>}
                     
                     
                 </div>
