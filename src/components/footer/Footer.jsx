@@ -48,7 +48,7 @@ function Footer() {
                         <NavLink to="#"><FaYoutube/></NavLink>
                     </div>
                     <div className="policy">
-                        <NavLink to="#">Terms and Conditions</NavLink>
+                      
                         <NavLink to="#">Privacy Policy</NavLink>
                     </div>
                 </div>
