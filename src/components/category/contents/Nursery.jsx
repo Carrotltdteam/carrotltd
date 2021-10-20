@@ -1,6 +1,6 @@
 import React from 'react'
-import nursery1 from '../../../resources/images/nursery1.jpg'
-import nursery2 from '../../../resources/images/nursery2.jpg'
+import nursery1 from '../../../resources/images/upper15.jpg'
+import nursery2 from '../../../resources/images/upper13.jpg'
 import Fade from 'react-reveal/Fade'
 function Nursery() {
     window.scrollTo({

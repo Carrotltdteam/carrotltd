@@ -1,6 +1,6 @@
 import React from 'react'
-import nursery1 from '../../../resources/images/nursery1.jpg'
-import nursery2 from '../../../resources/images/nursery2.jpg'
+import upper5 from '../../../resources/images/upper5.jpg'
+import upper11 from '../../../resources/images/upper11.jpg'
 import Fade from 'react-reveal/Fade'
 function Sat() {
     window.scrollTo({
@@ -14,20 +14,18 @@ function Sat() {
             <div className="cat-button"><h2>sat</h2></div>
                 <div className="cat-body">
                     <div className="card">
-                        <div className="image"><img src={nursery1} alt="cat-caption" /></div>
-                        <h2>Pre-Primary &amp; Lower Primary Tutor</h2>
-                        <p>Hire experienced tutors in phonics, maths, 
-                            handwriting and tutors that would help in 
-                            homework support.
+                        <div className="image"><img src={upper5} alt="cat-caption" /></div>
+                        <h2>SAT Maths Tutor</h2>
+                        <p>Hire a good and experienced SAT Maths home tutor 
+                            to help you score above 680 in your upcoming SAT exams.
                         </p>
                     </div>
 
                     <div className="card">
-                        <div className="image"><img src={nursery2} alt="cat-caption" /></div>
-                        <h2>Upper Nursery</h2>
-                        <p>Hire experienced tutors in phonics, maths, 
-                            handwriting and tutors that would help in 
-                            homework support.
+                        <div className="image"><img src={upper11} alt="cat-caption" /></div>
+                        <h2>SAT English Tutor</h2>
+                        <p>Hire a professional and experienced SAT English language 
+                            tutor to help you score above 680 in your exams.
                         </p>
                     </div>
                 </div>

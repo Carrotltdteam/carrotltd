@@ -37,6 +37,24 @@ return(
                 <div className="outer-body">
                     <div className="body">
                         <div className="buttons">
+                            <select onChange={(e)=>setContent(e.target.value)} name="list"  className="form-control list-cat">
+                                <option selected={content} disabled>{content}</option>
+                                <option value="nursery">nursery</option>
+                                <option value="lower primary">lower primary</option>
+                                <option value="upper primary">upper primary</option>
+                                <option value="junior secondary">junior secondary</option>
+                                <option value="senoir secondary">senoir secondary</option>
+                                <option value="igcse">igcse</option>
+                                <option value="jamb/utme">jamb/utme</option>
+                                <option value="waec">waec</option>
+                                <option value="sat">sat</option>
+                                <option value="ielts/toefl">ielts/toefl</option>
+                                <option value="languages">languages</option>
+                                <option value="music">music</option>
+                                <option value="undergraduate">undergraduate</option>
+                                <option value="professional exams">professional exams</option>
+                                <option value="checkpoint exam">checkpoint exam</option>
+                            </select>
                             <input type="button" className={content==="nursery"?"btn-category active":"btn-category"} onClick={()=>setContent("nursery")} value="nursery" />
                             <input type="button" className={content==="lower primary"?"btn-category active":"btn-category"}  onClick={()=>setContent("lower primary")} value="lower primary"  />
                             <input type="button" className={content==="upper primary"?"btn-category active":"btn-category"}  onClick={()=>setContent("upper primary")} value="upper primary" />
@@ -52,6 +70,7 @@ return(
                             <input type="button" className={content==="undergraduate"?"btn-category active":"btn-category"}  onClick={()=>setContent("undergraduate")} value="undergraduate" />
                             <input type="button" className={content==="professional exams"?"btn-category active":"btn-category"}  onClick={()=>setContent("professional exams")} value="professional exams" />
                             <input type="button" className={content==="checkpoint exam"?"btn-category active":"btn-category"}  onClick={()=>setContent("checkpoint exam")} value="checkpoint exam" />
+                        
                         </div>
 
                         <div className="content">
@@ -70,6 +89,29 @@ return(
                             content==="undergraduate"?<Undergraduate/>:
                             content==="professional exams"?<ProfExam/>:<Checkpoint/>                             
                             }
+                        </div>
+
+                        <div className="buttons">
+                           
+                            <select onChange={(e)=>setContent(e.target.value)} name="list" className="form-control list-cat">
+                                <option selected={content} disabled>{content}</option>
+                                <option value="nursery">nursery</option>
+                                <option value="lower primary">lower primary</option>
+                                <option value="upper primary">upper primary</option>
+                                <option value="junior secondary">junior secondary</option>
+                                <option value="senoir secondary">senoir secondary</option>
+                                <option value="igcse">igcse</option>
+                                <option value="jamb/utme">jamb/utme</option>
+                                <option value="waec">waec</option>
+                                <option value="sat">sat</option>
+                                <option value="ielts/toefl">ielts/toefl</option>
+                                <option value="languages">languages</option>
+                                <option value="music">music</option>
+                                <option value="undergraduate">undergraduate</option>
+                                <option value="professional exams">professional exams</option>
+                                <option value="checkpoint exam">checkpoint exam</option>
+                            </select>
+                        
                         </div>
                     </div>
 

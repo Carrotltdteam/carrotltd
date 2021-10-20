@@ -1,6 +1,7 @@
 import React from 'react'
-import nursery1 from '../../../resources/images/nursery1.jpg'
-import nursery2 from '../../../resources/images/nursery2.jpg'
+import upper15 from '../../../resources/images/upper15.jpg'
+import upper13 from '../../../resources/images/upper13.jpg'
+import upper14 from '../../../resources/images/upper14.jpg'
 import Fade from 'react-reveal/Fade'
 function LowerPrimary() {
     window.scrollTo({
@@ -14,7 +15,7 @@ function LowerPrimary() {
             <div className="cat-button"><h2>lower primary</h2></div>
                 <div className="cat-body">
                     <div className="card">
-                        <div className="image"><img src={nursery1} alt="cat-caption" /></div>
+                        <div className="image"><img src={upper15} alt="cat-caption" /></div>
                         <h2>Pre-Primary &amp; Lower Primary Tutor</h2>
                         <p>Hire experienced tutors in phonics, maths, 
                             handwriting and tutors that would help in 
@@ -23,7 +24,7 @@ function LowerPrimary() {
                     </div>
 
                     <div className="card">
-                        <div className="image"><img src={nursery2} alt="cat-caption" /></div>
+                        <div className="image"><img src={upper13} alt="cat-caption" /></div>
                         <h2>Upper Nursery</h2>
                         <p>Hire experienced tutors in phonics, maths, 
                             handwriting and tutors that would help in 
@@ -31,7 +32,7 @@ function LowerPrimary() {
                         </p>
                     </div>
                     <div className="card">
-                        <div className="image"><img src={nursery2} alt="cat-caption" /></div>
+                        <div className="image"><img src={upper14} alt="cat-caption" /></div>
                         <h2>American Pre-Primary &amp; Lower Primary General Tutor</h2>
                         <p>Hire professional home tutors that would teach you phonics, 
                             math, handwriting, reading, personal, social and emotional 
