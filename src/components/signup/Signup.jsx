@@ -149,7 +149,7 @@ this.setState({
                                 placeholder="Your Full Name" 
                                 className="firstname form-control" required />
 
-                                <input type="phone" name="phone" placeholder="Your phone number" 
+                                <input type="tel" name="phone" placeholder="Your phone number" 
                                 className="phone form-control" maxLength="11" required/>
                                 
                             </div>

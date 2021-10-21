@@ -19,7 +19,7 @@ import Fade from 'react-reveal/Fade'
 
   setScroll=()=>{
     const offset=window.scrollY;
-    if(offset > 50 ){
+    if(offset > 35 ){
       this.setState({scrolled:true});
     }
     else{
@@ -68,7 +68,7 @@ import Fade from 'react-reveal/Fade'
                      <Fade  >
                     <div className="links">
                         <NavLink to ="/about" onClick={this.handleToggle} id={this.props.active==="about"?"active":null} className="nav_link" href="#">About us</NavLink>
-                        <NavLink to ="/category" onClick={this.handleToggle} id={this.props.active==="category"?"active":null} className="nav_link" href="#">Catergory</NavLink>      
+                        <NavLink to ="/category" onClick={this.handleToggle} id={this.props.active==="category"?"active":null} className="nav_link" href="#">Category</NavLink>      
                         <NavLink to ="/contact" onClick={this.handleToggle} id={this.props.active==="contact"?"active":null} className="nav_link" href="#">Contact us</NavLink>
                         <NavLink to ="/signup" onClick={this.handleToggle} id={this.props.active==="join"?"active":null} className="nav_link" href="#">Join Carrot</NavLink> 
                         <NavLink to ="/signin" onClick={this.handleToggle} className="nav_link_log" href="#">Login</NavLink>

@@ -4,6 +4,7 @@ import {getFirestore, onSnapshot,doc } from 'firebase/firestore'
 import app from '../../config/fire';
 import Fade from 'react-reveal/Fade'
 import {FiArrowUpCircle} from 'react-icons/fi'
+import {FaAlignJustify} from 'react-icons/fa'
 import HiBasic from './hirecontent/HiBasic';
 const auth = getAuth(app);
 const db=getFirestore(app)
@@ -59,6 +60,26 @@ GetDetails=()=>{
     });
 }
 
+handleToggle=()=>{
+    const offset=window.innerWidth;
+    if(offset<=740){
+    if (!this.state.toggle) {
+        if(offset<=400){
+            document.getElementById("sidebar").style.width = "60%"
+            }else{
+                document.getElementById("sidebar").style.width = "40%"
+            }
+       
+        this.setState({toggle:true})
+
+    }else{
+        document.getElementById("sidebar").style.width = "0%"
+       
+        this.setState({toggle:false})
+
+    }
+}
+}
 
 SetToTop=()=>{
     const offset=document.documentElement.scrollTop;
@@ -76,28 +97,33 @@ SetToTop=()=>{
         });
       };
     LogOut=()=>{
-        signOut(auth).then(() =>{window.location.assign("/")}).catch((error) => {alert(error.code)});
+        signOut(auth).then(() =>{}).catch((error) => {alert(error.code)});
         }  
   
     render() {
+        window.addEventListener('scroll', this.SetToTop);
         return (
             <Fade>
                 <div className="hiprofile-container">
-                    <div className="sidebar">
-                        <div className="logout-container">
-                            <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
+                <div className="mobile">
+                    <FaAlignJustify onClick={this.handleToggle}  className='nav-icon'/>
+                </div>
+                    <div id="sidebar" className="sidebar">
+                    <p className="closebtn" onClick={this.handleToggle}>&times;</p>
+                    <div className="logout-container">
+                        <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
+                    </div>
+                    <Fade duration={1000} cascade when={this.state.toTop}>
+                        <div className={this.state.toTop?"uparrow show":"uparrow hide"}>
+                            <FiArrowUpCircle onClick= {this.ScrollToTop} />
                         </div>
-                        <Fade duration={1000} cascade when={this.state.toTop}>
-                            <div className={this.state.toTop?"uparrow show":"uparrow hide"}>
-                                <FiArrowUpCircle onClick= {this.ScrollToTop} />
-                            </div>
-                        </Fade>
+                    </Fade>
                     </div>
 
-                    <div className="content">
+                    <div id="content" className="content">
 
                         <h1>PROFILE</h1>
-                      {this.state.data.basic.completed===false? <Fade > <HiBasic/></Fade>:null}
+                      {this.state.data.basic.completed===false?<Fade><HiBasic/></Fade>:null}
                       
                     </div> 
                     

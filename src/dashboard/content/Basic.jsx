@@ -108,9 +108,9 @@ SubmitUploadedFile=(e)=>{
                     <form onSubmit={this.SubmitData}>
                        
                         <div className="state-lga">
-                            <select name="state" required className="state form-control" placeholder="Select state" >
-                            <option value="" selected="selected">- Select State Of Residence -</option>
-                              <option value="Abuja FCT">Abuja FCT</option>
+                            <select name="state" required className="state form-control"  >
+                            <option value="">- Select State Of Residence -</option>
+                              <option defaultValue="Abuja FCT">Abuja FCT</option>
                               <option value="Abia">Abia</option>
                               <option value="Adamawa">Adamawa</option>
                               <option value="Akwa Ibom">Akwa Ibom</option>
@@ -153,7 +153,7 @@ SubmitUploadedFile=(e)=>{
                         <div className="gender-dob">
                             <select name="gender" required className="gender form-control" id="">
                             <option value="">Select Gender</option>
-                            <option value="Male">Male</option>
+                            <option defaultValue="Male">Male</option>
                             <option value="Female">Female</option>
                             </select>
 

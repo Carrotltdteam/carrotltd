@@ -17,6 +17,7 @@
       position: fixed;
       top: 0;
       left: 0;
+      bottom: 0;
       width: 18%;
       height: 100vh;
       transition:all ease-in-out 0.3s;
@@ -62,13 +63,7 @@
      display: block;
    }
   }
-        background-color: $secondary;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 18%;
-        height: 100vh;
+        
         .logout-container{
       text-align: right;
      margin: 1vh;

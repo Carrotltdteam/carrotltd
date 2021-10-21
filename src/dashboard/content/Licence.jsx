@@ -96,7 +96,7 @@ SubmitUploadedFile=(e)=>{
                          <div className="type-number">
                              <select name="type" required className="form-control type" id="">
                                  <option value="">ID CARD TYPE</option>
-                                 <option value="Driver's Licence">Driver's Licence</option>
+                                 <option defaultValue="Driver's Licence">Driver's Licence</option>
                                  <option value="National ID Card">National ID Card</option>
                                  <option value="International Passport">International Passport</option>
                                  <option value="Voter's Card">Voter's Card</option>

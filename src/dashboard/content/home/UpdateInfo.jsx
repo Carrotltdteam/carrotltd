@@ -139,9 +139,9 @@ SubmitUploadedFile=(e)=>{
                    
                        
                         <div className="state-lga">
-                            <select name="state" required className="state form-control" placeholder="Select state" >
-                              <option defaultValue="selected">- Select State Of Residence -</option>
-                              <option value="Abuja FCT">Abuja FCT</option>
+                            <select name="state" required className="state form-control" >
+                              <option value="">- Select State Of Residence -</option>
+                              <option defaultValue="Abuja FCT">Abuja FCT</option>
                               <option value="Abia">Abia</option>
                               <option value="Adamawa">Adamawa</option>
                               <option value="Akwa Ibom">Akwa Ibom</option>
@@ -192,7 +192,7 @@ SubmitUploadedFile=(e)=>{
                         </div>
                         <div className="bio-container">
                             <textarea name="bio" required id="bio" cols="30" rows="10" maxLength="300" placeholder="Write A Short Bio About Yourself"/>
-                            <div><input name="phone" required type="phone" maxLength={11} className="form-control phone" placeholder="Enter Phone Number" /></div>
+                            <div><input name="phone" required type="tel" maxLength={11} className="form-control phone" placeholder="Enter Phone Number" /></div>
                         </div>
                         
                         

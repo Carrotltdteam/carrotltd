@@ -120,15 +120,13 @@ handleToggle=()=>{
                     <div id="sidebar" className="sidebar">
                     <p className="closebtn" onClick={this.handleToggle}>&times;</p>
                     <div className="logout-container">
-                            <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
-                        </div>
-                        <Fade duration={1000} cascade when={this.state.toTop}>
+                        <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
+                    </div>
+                    <Fade duration={1000} cascade when={this.state.toTop}>
                         <div className={this.state.toTop?"uparrow show":"uparrow hide"}>
-                        <FiArrowUpCircle onClick= {this.ScrollToTop} />
+                            <FiArrowUpCircle onClick= {this.ScrollToTop} />
                         </div>
-                        </Fade>
-                   
-               
+                    </Fade>
                     </div>
 
                     <div id="content" className="content">

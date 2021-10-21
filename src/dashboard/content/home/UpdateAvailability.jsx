@@ -73,31 +73,34 @@ const db=getFirestore(app)
         for(var index=8; index<=19;index++){
             switch(index){
                 case 12:
-                    item.push( <option value="12 PM">12 PM</option>)
+                    item.push( <option key={index} value="12 PM">12 PM</option>)
                     break;
                 case 13:
-                    item.push( <option value="1 PM">1 PM</option>)
+                    item.push( <option key={index} value="1 PM">1 PM</option>)
                     break;
                 case 14:
-                    item.push( <option value="2 PM">2 PM</option>)
+                    item.push( <option key={index} value="2 PM">2 PM</option>)
                     break;
                 case 15:
-                    item.push( <option value="3 PM">3 PM</option>)
+                    item.push( <option key={index} value="3 PM">3 PM</option>)
                     break;
                 case 16:
-                    item.push( <option value="4 PM">4 PM</option>)
+                    item.push( <option key={index} value="4 PM">4 PM</option>)
                     break;
                 case 17:
-                    item.push( <option value="5 PM">5 PM</option>)
+                    item.push( <option key={index} value="5 PM">5 PM</option>)
                     break;
                 case 18:
-                    item.push( <option value="6 PM">6 PM</option>)
+                    item.push( <option key={index} value="6 PM">6 PM</option>)
                     break;
                 case 19:
-                    item.push( <option value="7 PM">7 PM</option>)
+                    item.push( <option key={index} value="7 PM">7 PM</option>)
+                    break;
+                case 8:
+                    item.push( <option  key={index} defaultValue={index+" AM"}>{index+" AM"}</option>)
                     break;
                 default:
-                    item.push( <option value={index+" AM"}>{index+" AM"}</option>)
+                    item.push( <option key={index} value={index+" AM"}>{index+" AM"}</option>)
 
             }
         }

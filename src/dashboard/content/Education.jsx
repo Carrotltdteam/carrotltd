@@ -91,7 +91,13 @@ SubmitUploadedFile=(e)=>{
         const year=[]
 
         for(var index=2021; index>=1960;index--){
-            year.push(<option key={index} value={index}>{index}</option>)
+            if(index===2021){
+                year.push(<option key={index} defaultValue={index}>{index}</option>)
+            }
+            else{
+                year.push(<option key={index} value={index}>{index}</option>)
+            }
+            
         }
         return (
             <div className="education-container">
@@ -114,7 +120,7 @@ SubmitUploadedFile=(e)=>{
                         <div className="school-dept">
                         <select name="degree" required className="form-control start" id="">
                             <option value="">- Degree -</option>
-                            <option value="P.Hd">P.Hd</option>                                                
+                            <option defaultValue="P.Hd">P.Hd</option>                                                
                             <option value="M.Sc">M.Sc</option>
                             <option value="BA">BA</option>
                             <option value="B.Sc">B.Sc</option>
@@ -125,7 +131,7 @@ SubmitUploadedFile=(e)=>{
                         </select>
                            <select name="grade" required className="form-control start" id="">
                                 <option value="">- Select Class of Degree -</option>                                                
-                                <option value="First Class">First Class</option>                                                
+                                <option defaultValue="First Class">First Class</option>                                                
                                 <option value="Distinction">Distinction</option>                                                
                                 <option value="Second Class Upper">Second Class Upper Division</option>
                                 <option value="Second Class Lower">Second Class Lower Division</option>

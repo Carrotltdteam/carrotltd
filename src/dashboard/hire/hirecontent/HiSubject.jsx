@@ -67,7 +67,7 @@ const db=getFirestore(app)
                 
              }).then(()=>{
                 emailjs.sendForm("service_nihdzjh","template_oa5mu7d",e.target,"user_MQhQ6YXm3I2JEqVCsmp5T").then(res=>
-                    {alert("Email Sent!!!")}
+                    {}
                 ).catch(error=>{alert(error.code)})
                 document.getElementById([e.target.name]).style.display = "none"
                 alert("Subject Added Successful\nYou will be contacted with more details soon\nPrice: "+totalPrice)
@@ -89,15 +89,15 @@ const db=getFirestore(app)
             <input type="text" id="hide" name="contact" value={this.state.contact} />
             <div  className="group-class">
                <select required name="group" className="form-control" >
-                   <option selected="">Subject Group</option>
-                   <option value="Academic">Academic</option>
+                   <option value="">Subject Group</option>
+                   <option defaultValue="Academic">Academic</option>
                    <option value="Music">Music</option>
                    <option value="Languages">Languages</option>
                    <option value="Others">Others</option>
                </select>
                <select required name="class"  className="form-control" id="">
-                   <option selected="">Subject Class</option>
-                   <option value="Nursery">Nursery</option>
+                   <option value="">Subject Class</option>
+                   <option defaultValue="Nursery">Nursery</option>
                    <option value="Upper Primary">Upper Primary</option>
                    <option value="Lower Primary">Lower Primary</option>
                    <option value="Junior Secondary">Junior Secondary</option>
@@ -117,8 +117,8 @@ const db=getFirestore(app)
             </div>
             <div  className="group-class">
                <select required name="perweek" className="form-control" >
-                   <option selected="">Classes per Week</option>
-                   <option value="1">1</option>
+                   <option value="">Classes per Week</option>
+                   <option defaultValue="1">1</option>
                    <option value="2">2</option>
                    <option value="3">3</option>
                    <option value="4">4</option>
@@ -127,8 +127,8 @@ const db=getFirestore(app)
                    <option value="7">7</option>
                </select>
                <select required name="hours"  className="form-control" id="">
-                   <option selected="">Hours per Class</option>
-                   <option value="1">1 Hour</option>
+                   <option value="">Hours per Class</option>
+                   <option defaultValue="1">1 Hour</option>
                    <option value="2">2 Hours</option>
                    <option value="3">3 Hours</option>
                    <option value="4">4 Hours</option>
@@ -140,14 +140,14 @@ const db=getFirestore(app)
 
             <div className="input-subject">
                 <select required name="duration"  className="form-control" id="">
-                   <option selected="">Lession Duration</option>
-                   <option value="1">1 Week</option>
+                   <option value="">Lession Duration</option>
+                   <option defaultValue="1">1 Week</option>
                    <option value="2">2 Weeks</option>
                    <option value="3">3 Weeks</option>
                    <option value="4">1 Month</option>
                </select>
 
-               <input required type="text"placeholder="Subject Name" name="subject_name" className="form-control subject-name" />
+               <input required type="text" placeholder="Subject Name" name="subject_name" className="form-control subject-name" />
             </div>
             
             <div className="btn-container">
@@ -170,8 +170,8 @@ const db=getFirestore(app)
                     <div className="subject">
                             
                         <select required name="subject" onChange={this.SetSelect} className="form-control" id="">
-                            <option selected="1">How Many Subject Do you Need</option>
-                            <option value="1">1</option>
+                            <option value="1">How Many Subject Do you Need</option>
+                            <option defaultValue="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>

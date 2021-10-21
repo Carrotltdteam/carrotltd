@@ -48,12 +48,12 @@ await updateDoc(theRef, {
                              <div className="type-name">
                              <select name="banktype" className="form-control banktype" required id="">
                              <option value="">Select Account Type</option>
-                                 <option value="Savings">Savings</option>
+                                 <option defaultValue="Savings">Savings</option>
                                  <option value="Current">Current</option>
                              </select>
                              <select name="bankname" className="form-control bankname" id="" required>
                              <option value="">Select Bank Name</option>
-                                 <option value="Wema Bank">Wema Bank</option>
+                                 <option defaultValue="Wema Bank">Wema Bank</option>
                                  <option value="First Bank">First Bank</option>
                                  <option value="Eco Bank">Eco Bank</option>
                                  <option value="Access Bank">Access Bank</option>
@@ -76,7 +76,7 @@ await updateDoc(theRef, {
                                    <input type="email" className="form-control refemail" required name="refemail" placeholder="Referee Email Address" />
                                </div>
                                <div className="phone-address">
-                                   <input type="phone" className="form-control refphone" required name="refphone" placeholder="Referee Phone Number" />
+                                   <input type="tel" className="form-control refphone" maxLength={11} required name="refphone" placeholder="Referee Phone Number" />
                                    <input type="text" className="form-control refaddress" required name="refaddress" placeholder="Referee Home Address" />
                                </div>
                                <div className="relate-occu">

@@ -83,15 +83,15 @@ SetSubject=async(e)=>{
             <h2>Subject {index}</h2>
             <div  className="group-class">
                <select required name="group" className="form-control" >
-                   <option selected="">Subject Group</option>
-                   <option value="Academic">Academic</option>
+                   <option value="">Subject Group</option>
+                   <option defaultValue="Academic">Academic</option>
                    <option value="Music">Music</option>
                    <option value="Languages">Languages</option>
                    <option value="Others">Others</option>
                </select>
                <select required name="class"  className="form-control" id="">
-                   <option selected="">Subject Class</option>
-                   <option value="Nursery">Nursery</option>
+                   <option value="">Subject Class</option>
+                   <option defaultValue="Nursery">Nursery</option>
                    <option value="Upper Primary">Upper Primary</option>
                    <option value="Lower Primary">Lower Primary</option>
                    <option value="Junior Secondary">Junior Secondary</option>
@@ -127,8 +127,8 @@ SetSubject=async(e)=>{
                     <div className="subject">
                             
                         <select required name="subject" onChange={this.SetSelect} className="form-control" id="">
-                            <option selected="1">How Many Subject Are you Teaching</option>
-                            <option value="1">1</option>
+                            <option value="1">How Many Subject Are you Teaching</option>
+                            <option defaultValue="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
