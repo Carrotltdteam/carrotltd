@@ -42,14 +42,14 @@ function Slider() {
           <div className="each-fade ">
             <div className="slide-content" style={{'backgroundImage': `url(${Slider2})`}}>
             <div className="slide-body">
-            <h1 id="become">BECOME A TUTOR</h1>
+            <h1 id="get">BECOME A TUTOR</h1>
               <p className='top'>Carrot Tutors provides an avenue for 
               experienced teachers to manage and grow their home tutoring 
               business. Did you know that there are over 500,000 parents 
               in Nigeria willing to pay a premium (probably equal to or 
               more than your regular school salary) to teach their kids or 
               even them according to a professional standard</p>
-              <NavLink className="btn-slide-become" to="/signup">Become a Tutor</NavLink>
+              <NavLink className="btn-slide-get" to="/signup">Become a Tutor</NavLink>
             </div>
             </div>
             
@@ -58,7 +58,7 @@ function Slider() {
          
             <div className="slide-content" style={{'backgroundImage': `url(${Slider3})`}}>
             <div className="slide-body">
-              <h1 id="about">ABOUT CARROT</h1>
+              <h1 id="become">ABOUT CARROT</h1>
               <p className='top'>Carrot is a Nigeria base tutoring 
               company with a presence in United Kingdom that 
               specializes in connecting you with professional 

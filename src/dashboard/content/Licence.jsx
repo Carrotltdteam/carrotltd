@@ -63,7 +63,10 @@ SubmitUploadedFile=(e)=>{
     }, 
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          this.setState({licenceURL:downloadURL})
+          this.setState({
+            licenceURL:downloadURL,
+            uploaded:true
+          })
       }).catch((error) => {
         alert(error.code)
         });

@@ -31,7 +31,8 @@ const db=getFirestore(app)
             grade:e.target.grade.value,
             school:e.target.school.value,
             startYear:e.target.start.value,
-            certUrl:this.state.certURL
+            certUrl:this.state.certURL,
+            uploaded:false
            
           }
     }).then(()=>{
@@ -71,7 +72,10 @@ SubmitUploadedFile=(e)=>{
     }, 
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          this.setState({certURL:downloadURL})
+          this.setState({
+              certURL:downloadURL,
+              uploaded:true
+        })
       
       }).catch((error) => {
         alert(error.code)

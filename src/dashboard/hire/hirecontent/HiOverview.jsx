@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Fade from 'react-reveal/Fade'
 import app from '../../../config/fire';
 import {getFirestore,onSnapshot, doc, updateDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 const auth = getAuth(app);
 const db=getFirestore(app)
- class HiOverview extends Component {
+ class HiOverview extends PureComponent {
 
 
 UpdateSubject=async (data)=>{
@@ -98,7 +98,7 @@ Complete=async(e)=>{
                 <h2>SUBJECTS</h2>
              <br />
                     <div className="overview-subject">
-                    { 
+                    { this.props.data.subject?
                     Object.entries(data).map((value) =>
                     (
                     <div key={value[0]} className="overview">
@@ -121,7 +121,7 @@ Complete=async(e)=>{
                         ))}
                         
                         <input onClick={this.Complete} name={value[0]}type="submit" value="Complete" className="btn-complete" />
-                    </div>))
+                    </div>)):null
                     }
                     </div>
                    

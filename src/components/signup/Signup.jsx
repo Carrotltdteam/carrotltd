@@ -5,7 +5,7 @@ import Header from '../header/Header'
 import app from '../../config/fire'
 import { NavLink } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
-import {getFirestore, getDoc,setDoc,doc } from 'firebase/firestore'
+import {getFirestore,setDoc,doc } from 'firebase/firestore'
 const auth=getAuth(app)
 const db=getFirestore(app)
  class Signup extends PureComponent {
@@ -19,17 +19,7 @@ const db=getFirestore(app)
          }
      }
 
-    SignUp= async(e)=>{
-        e.preventDefault()
-        this.setState({isLoading:!this.state.isLoading}) 
-        const docRef = doc(db, "users", e.target.email.value);
-        const docSnap = await getDoc(docRef);
-if (docSnap.exists()) {
-    alert("User Already Exists!!!")
-    this.setState({isLoading:false})
-} else {
-
-    if (this.state.accountType===0) {
+DataStoreHire=async(e)=>{
         const type="Hire"
         await setDoc(doc(db, "users", e.target.email.value), {
             contact:{
@@ -49,23 +39,10 @@ if (docSnap.exists()) {
             
           });
     
-        createUserWithEmailAndPassword(auth, e.target.email.value, e.target.password.value)
-        .then((userCredential) => {  
-        const user = userCredential.user;
-        updateProfile(user, {
-            displayName: type,})
-        .then( () => {}).catch((error) => {
-            alert(error.code)});
-            
-           
-        }).catch((error)=>{
-            this.setState({isLoading:false})
-            alert(error.code)
-
-        })         
+             
     }
-
-    else if (this.state.accountType===1) {
+    DataStoreBecome=async(e)=>{
+  
         const type="Become"
         await setDoc(doc(db, "users", e.target.email.value), {
             approved:false,
@@ -96,22 +73,51 @@ if (docSnap.exists()) {
                 completed:false,
             }
           });
-        createUserWithEmailAndPassword(auth, e.target.email.value, e.target.password.value)
-        .then((userCredential) => {
+}
+
+    SignUp= async(e)=>{
+        e.preventDefault()
+        this.setState({isLoading:!this.state.isLoading}) 
+
+    var type
+    if (this.state.accountType===0) {
+         type="Hire"
+
+            createUserWithEmailAndPassword(auth, e.target.email.value, e.target.password.value)
+        .then((userCredential) => {  
         const user = userCredential.user;
         updateProfile(user, {
-            displayName: type,
-        }).then( () => {}).catch((error) => {
+            displayName: type,})
+        .then( this.DataStoreHire(e)).catch((error) => {
+            alert(error.code)});
+            
+        
+        }).catch((error)=>{
+            this.setState({isLoading:false})
             alert(error.code)
-        })
-       
-    }).catch((error)=>{
-        this.setState({isLoading:false})
-        alert(error.code)
-    })
+
+        })   
     }
-  
-}
+    else{
+            type="Become"
+    
+            createUserWithEmailAndPassword(auth, e.target.email.value, e.target.password.value)
+            .then((userCredential) => {  
+            const user = userCredential.user;
+            updateProfile(user, {
+                displayName: type,})
+            .then( this.DataStoreBecome(e)).catch((error) => {
+                alert(error.code)});
+                
+            
+            }).catch((error)=>{
+                this.setState({isLoading:false})
+                alert(error.code)
+
+            })   
+
+        }
+ 
 
 }
 

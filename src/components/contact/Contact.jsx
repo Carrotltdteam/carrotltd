@@ -65,18 +65,26 @@ import Footer from '../footer/Footer'
                         <div className="contact">
                             <div className="contact-info">
                                 <div className="icon"><span><GiSmartphone/></span></div>
-                                <h3>Phone Number</h3>
-                                <p>07030050354</p>
+                                <h3>UK Phone Number</h3>
+                                <p>+447-405-805-483</p>
+                                <h3>Nigeria Phone Number</h3>
+                                <p>+234-703-005-0354, +234-808-050-7630</p>
+                                <h3>Nigeria Phone Number</h3>
+                                <p>+234-705-532-5747</p>
                             </div>
                             <div className="contact-info">
                                 <div className="icon"><span><FiMail/></span></div>
                                 <h3>Email Address</h3>
-                                <p>adesholaadeoye4@gmail.com</p>
+                                <p>carrotltdteam@gmail.com</p>
                             </div>
                             <div className="contact-info">
                                 <div className="icon"><span><FaMapMarkerAlt/></span></div>
-                                <h3>Office Address</h3>
-                                <p>3 William street, Sawmill road Gbagada</p>
+                                <h3>United Kingdom Address</h3>
+                                <p>165 Shakespeare Road Gillingham, Kent. United Kingdom. ME7 5QB</p>
+                                <h3>Nigeria Address</h3>
+                                <p>3, Williams Street off Diya road, Gbagada Lagos.</p>
+                                <h3>Nigeria Address</h3>
+                                <p>196 Shibiri Road, Pako Bus Stop, Shibiri, Ojo, Lagos</p>
                             </div>
                             <div className="contact-info">
                                 <div className="icon"><span><GiClick/></span></div>
