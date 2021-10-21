@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import {getFirestore,doc,updateDoc,} from 'firebase/firestore'
+import Fade from 'react-reveal/Fade'
 import { getAuth,updateProfile } from "firebase/auth";
 import app from '../../../config/fire';
 import { getStorage,ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 const storage = getStorage(app);
 const auth = getAuth(app);
 const db=getFirestore(app)
- class HiBasic extends Component {
+
+class HiBasic extends PureComponent {
+
      constructor(props) {
          super(props)
      
@@ -87,6 +90,8 @@ SubmitUploadedFile=(e)=>{
 
     render() {
         return (
+          <>
+          <Fade duration={1500}>
             <div className="hibasic-container">
                 <h1>Basic information</h1>
                 <div className="form-container">
@@ -100,7 +105,7 @@ SubmitUploadedFile=(e)=>{
                             <p id="progress"></p>
                             </div>
                             </form>
-                        </div>
+                    </div>
                     <form onSubmit={this.SubmitData}>
                        
                         <div className="state-lga">
@@ -162,10 +167,10 @@ SubmitUploadedFile=(e)=>{
                             <input type="submit"className="btn-submit" />
                         </div>
                     </form>
-                </div>
-
-                
+                </div>         
             </div>
+            </Fade>
+            </>
         )
     }
 }

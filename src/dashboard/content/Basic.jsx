@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import {getFirestore,doc,updateDoc,} from 'firebase/firestore'
 import { getAuth,updateProfile } from "firebase/auth";
 import app from '../../config/fire';
@@ -6,7 +6,7 @@ import { getStorage,ref, uploadBytesResumable, getDownloadURL } from "firebase/s
 const storage = getStorage(app);
 const auth = getAuth(app);
 const db=getFirestore(app)
- class Basic extends Component {
+ class Basic extends PureComponent {
      constructor(props) {
          super(props)
      
@@ -167,8 +167,6 @@ SubmitUploadedFile=(e)=>{
                         </div>
                     </form>
                 </div>
-
-                
             </div>
         )
     }

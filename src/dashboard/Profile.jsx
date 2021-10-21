@@ -114,19 +114,19 @@ handleToggle=()=>{
             <>
           <Fade>
                 <div className="profile-container">
-                <div className="mobile">
-                    <FaAlignJustify onClick={this.handleToggle}  className='nav-icon'/>
-                </div>
-                    <div id="sidebar" className="sidebar">
-                    <p className="closebtn" onClick={this.handleToggle}>&times;</p>
-                    <div className="logout-container">
-                        <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
+                    <div className="mobile">
+                        <FaAlignJustify onClick={this.handleToggle}  className='nav-icon'/>
                     </div>
-                    <Fade duration={1000} cascade when={this.state.toTop}>
-                        <div className={this.state.toTop?"uparrow show":"uparrow hide"}>
-                            <FiArrowUpCircle onClick= {this.ScrollToTop} />
+                    <div id="sidebar" className="sidebar">
+                        <p className="closebtn" onClick={this.handleToggle}>&times;</p>
+                        <div className="logout-container">
+                            <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
                         </div>
-                    </Fade>
+                        <Fade duration={1000} cascade when={this.state.toTop}>
+                            <div className={this.state.toTop?"uparrow show":"uparrow hide"}>
+                                <FiArrowUpCircle onClick= {this.ScrollToTop} />
+                            </div>
+                        </Fade>
                     </div>
 
                     <div id="content" className="content">
@@ -138,6 +138,7 @@ handleToggle=()=>{
                       {this.state.data.availability.completed===false?<Fade> <Availability/></Fade>:null} 
                        {this.state.data.subject.completed===false?<Fade><Subject/></Fade>:null}
                     </div> 
+                    
                 </div>
             </Fade>
             </>

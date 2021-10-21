@@ -80,7 +80,6 @@ handleToggle=()=>{
     }
 }
 }
-
 SetToTop=()=>{
     const offset=document.documentElement.scrollTop;
     if (offset > 300){
@@ -103,21 +102,22 @@ SetToTop=()=>{
     render() {
         window.addEventListener('scroll', this.SetToTop);
         return (
+            <>
             <Fade>
                 <div className="hiprofile-container">
-                <div className="mobile">
-                    <FaAlignJustify onClick={this.handleToggle}  className='nav-icon'/>
-                </div>
-                    <div id="sidebar" className="sidebar">
-                    <p className="closebtn" onClick={this.handleToggle}>&times;</p>
-                    <div className="logout-container">
-                        <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
+                    <div className="mobile">
+                        <FaAlignJustify onClick={this.handleToggle}  className='nav-icon'/>
                     </div>
-                    <Fade duration={1000} cascade when={this.state.toTop}>
-                        <div className={this.state.toTop?"uparrow show":"uparrow hide"}>
-                            <FiArrowUpCircle onClick= {this.ScrollToTop} />
+                    <div id="sidebar" className="sidebar">
+                        <p className="closebtn" onClick={this.handleToggle}>&times;</p>
+                        <div className="logout-container">
+                            <button className="btn-logout" onClick={this.LogOut}>Log Out</button>
                         </div>
-                    </Fade>
+                        <Fade duration={1000} cascade when={this.state.toTop}>
+                            <div className={this.state.toTop?"uparrow show":"uparrow hide"}>
+                                <FiArrowUpCircle onClick= {this.ScrollToTop} />
+                            </div>
+                        </Fade>
                     </div>
 
                     <div id="content" className="content">
@@ -129,6 +129,7 @@ SetToTop=()=>{
                     
                 </div>
             </Fade>
+            </>
         )
     }
 }
