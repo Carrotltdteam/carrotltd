@@ -12,6 +12,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import AdminSignIn from './admin/AdminSignIn';
 import ResetPassword from './components/reset/ResetPassword';
 import AdHome from './admin/content/AdHome';
+import Privacy from './components/privacy/Privacy';
 export class App extends Component {
   constructor(props) {
     super(props)
@@ -68,6 +69,7 @@ export class App extends Component {
           <Route path='/' exact component={Landing}/>
           <Route path='/about' exact component={About}/>
           <Route path='/contact' exact component={Contact}/>
+          <Route path='/privacy' exact component={Privacy}/>
           <Route path='/category' exact component={Categories}/>
           <Route path='/reset' exact component={ResetPassword}/>
           <Route path='/admin' exact  render={()=>(!this.state.adminLoggedIn?(<AdminSignIn/>):<AdHome user={this.state.user}/>)}/>

@@ -50,7 +50,7 @@ function Footer() {
                     </div>
                     <div className="policy">
                       
-                        <NavLink to="#">Privacy Policy</NavLink>
+                        <NavLink to="/privacy">Privacy Policy</NavLink>
                     </div>
                 </div>
             </div>

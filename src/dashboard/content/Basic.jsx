@@ -22,6 +22,7 @@ const db=getFirestore(app)
         e.preventDefault()
         const theRef = doc(db, "users", auth.currentUser.email);
         var lga=e.target.lga.value
+        var city=e.target.city.value
         var state=e.target.state.value
     await updateDoc(theRef, {
       basic: {
@@ -29,6 +30,7 @@ const db=getFirestore(app)
         completed:true,
         dob:e.target.date.value,
         gender:e.target.gender.value,
+        city:city.toUpperCase(),
         lga:lga.toUpperCase(),
         photoUrl:this.state.photoURL,
         stateOfResidence:state.toUpperCase(),
@@ -148,6 +150,7 @@ SubmitUploadedFile=(e)=>{
                               <option value="Yobe">Yobe</option>
                               <option value="Zamfara">Zamfara</option>
                             </select>
+                            <input name="city" required type="text" className="form-control city" placeholder="Enter City of residence" />
                             <input name="lga" required type="text" className="form-control lga" placeholder="Enter LGA of residence" />
                         </div>
                         <div className="gender-dob">

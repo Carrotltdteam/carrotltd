@@ -1,0 +1,33 @@
+.privacy-container{
+    margin-top: -14%;
+    z-index: -1;
+    .privacy-top{
+        background-image:url("../../images/s2.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        height: 90vh;
+        z-index: -1;
+        text-align: center;
+       div{
+        background-color: rgba(5, 5, 5, 0.151);
+        height: 100%;
+       }
+       h1{
+        padding-top:9em ;
+        color: $pwhite;
+     }
+     p{
+         color: rgb(216, 216, 216);
+         word-spacing: 10px;
+         font-size: 18px;
+         a{
+             text-decoration: none;
+             color: rgb(216, 216, 216);
+         }
+         span{
+             word-spacing: 0px;
+         }
+     }
+    }
+}
