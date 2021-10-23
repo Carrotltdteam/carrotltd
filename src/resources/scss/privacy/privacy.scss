@@ -9,6 +9,9 @@
         height: 90vh;
         z-index: -1;
         text-align: center;
+        @media only screen and (max-width: 600px) {
+            height: 70vh;
+         }
        div{
         background-color: rgba(5, 5, 5, 0.151);
         height: 100%;
@@ -29,5 +32,35 @@
              word-spacing: 0px;
          }
      }
+    }
+
+    .privacy-body{
+        margin: 2% 10%;
+        @media only screen and (max-width: 600px) {
+            margin: 2% 4%;
+         }
+        .one{
+            h1{
+                color: $primary;
+                margin: 1% 0%;
+                @media only screen and (max-width: 400px) {
+                    font-size: 25px;
+                 }
+            }
+            p{
+                font-size: 18px;
+                @media only screen and (max-width: 400px) {
+                    font-size: 15px;
+                 }
+            }
+            ul{
+                li{
+                    margin-left: 3%;
+                    @media only screen and (max-width: 400px) {
+                        margin-left: 5%;
+                     }
+                }
+            }
+        }
     }
 }
