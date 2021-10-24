@@ -58,7 +58,7 @@ if (docSnap.exists()) {
         return (
             <Fade duration={1500}>
             <div className="adtutorinfo" >
-                <h1>VIEW TUTOR INFO</h1>
+                <h1>VIEW CLIENT INFO</h1>
                 <div className="viewcontent">
                     <div className="searchbar">
                         <form onSubmit={this.GetData}>
