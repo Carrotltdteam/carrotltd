@@ -73,7 +73,6 @@ if (docSnap.exists()) {
                             <div className="contact details">
                                 <h2>Contact Details</h2>
                                 <br />
-                             
                                 <p>NAME:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.contact.name:""}</p>
                                 <p>PHONE:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.contact.phone:""}</p>
                                 <p>EMAIL:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.contact.email:""}</p>
@@ -91,25 +90,11 @@ if (docSnap.exists()) {
                                 
                             </div>
 
-                            
-
-                           
-
-                            
-                            
-
                             <div className="availability">
                                 <h2>Subject Details</h2>
                                 <br />
                                 {subject}
                             </div>
-                            {(this.state.userData.contact.accountType==="Become"&&this.state.userData.approved===false)?
-                            <div className="btn-container">
-                                <input onClick={this.Approve} type="submit" className="btn-submit" Value="Approve"/>
-                            </div>:null
-                            }
-                            
-
                         </div>
                     </Fade>:null}
                     
