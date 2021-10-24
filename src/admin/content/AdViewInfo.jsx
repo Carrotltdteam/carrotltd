@@ -38,12 +38,17 @@ const docRef = doc(db, "users", e.target.children.search.value);
 const docSnap = await getDoc(docRef);
 
 if (docSnap.exists()) {
-    this.setState({userData:docSnap.data()})
-} else {
+    if(docSnap.data().contact.accountType==="Become"){
+        this.setState({userData:docSnap.data()})
+
+    }
+    else {
   
-  alert("Tutor Not Found");
-  e.target.children.search.value=""
-}
+        alert("Tutor Not Found");
+        e.target.children.search.value=""
+      }
+    
+} 
 }
     render() {
        
@@ -194,6 +199,7 @@ if (docSnap.exists()) {
                                     <p>GENDER:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.basic.gender:""}</p>
                                     <p>DOB:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.basic.dob:""}</p>
                                     <p>STATE:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.basic.stateOfResidence:""}</p>
+                                    <p>CITY:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.basic.city:""}</p>
                                     <p>LGA:&nbsp;&nbsp;{this.state.userData!==null?this.state.userData.basic.lga:""}</p>
                                     <p>PHOTO:&nbsp;&nbsp;{this.state.userData!==null?<a target="_blank" rel="noreferrer" href={this.state.userData.basic.photoUrl}>view</a> :""}</p>
                                     

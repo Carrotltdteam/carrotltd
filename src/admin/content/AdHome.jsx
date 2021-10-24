@@ -10,6 +10,7 @@ import AdUnapproved from './AdUnapproved';
 import AdApproved from './AdApproved';
 import AdTutorSearch from './AdTutorSearch';
 import AdViewInfo from './AdViewInfo';
+import AdviewClient from './AdviewClient';
 const auth = getAuth(app);
 
 class AdHome extends PureComponent {
@@ -97,7 +98,8 @@ LogOut=()=>{
                             <button onClick={this.SetToRender} name="unapproved"  id={this.props.active==="about"?"active":null} className="nav_link" >Unapproved Tutors</button>
                             <button onClick={this.SetToRender} name="approved" id={this.props.active==="about"?"active":null} className="nav_link" >Approved Tutors</button>
                             <button onClick={this.SetToRender} name="search" id={this.props.active==="about"?"active":null} className="nav_link" >Search Tutor</button>
-                            <button onClick={this.SetToRender} name="viewinfo" id={this.props.active==="about"?"active":null} className="nav_link" >View Info</button>
+                            <button onClick={this.SetToRender} name="viewinfo" id={this.props.active==="about"?"active":null} className="nav_link" >View Tutor</button>
+                            <button onClick={this.SetToRender} name="viewclient" id={this.props.active==="about"?"active":null} className="nav_link" >View Client</button>
                         </div>
     
                         <Fade duration={1000} cascade when={this.state.toTop}>
@@ -115,6 +117,7 @@ LogOut=()=>{
                         this.state.toRender==="search"?<AdTutorSearch/>:
                         this.state.toRender==="approved"?<AdApproved />:
                         this.state.toRender==="unapproved"?<AdUnapproved/>:
+                        this.state.toRender==="viewclient"?<AdviewClient/>:
                         <AdOverview />
                         
                         
