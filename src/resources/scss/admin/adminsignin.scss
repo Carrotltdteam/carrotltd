@@ -50,6 +50,8 @@
                             background-color: $secondary;
                         }
                     }
+                    
+
                     .bot {
                         place-self: center;
                         margin: 0% 50%;
@@ -61,6 +63,24 @@
                         -webkit-animation: spin 2s linear infinite;
                         animation: spin 2s linear infinite;
                       }
+                }
+
+                .other-links{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 1%;
+                    .reset-link{
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: $primary;
+                        transition: all ease-in-out .3s;
+                        &:hover{
+                            transition: all ease-in-out .3s;
+                            color: $secondary;
+    
+                        }
+                    }
+
                 }
             }
         }

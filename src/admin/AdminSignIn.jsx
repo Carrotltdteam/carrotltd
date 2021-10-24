@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
-
+import {NavLink} from 'react-router-dom'
 import {getAuth, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
 const auth = getAuth();
  class AdminSignIn extends Component {
@@ -68,7 +68,9 @@ SignIn=(e)=>{
                         </div>
                         <div className="btn-container">
                         <button className="btn-signin">Login</button> {this.state.isLoading?<span className="bot"></span>:null}
-
+                        </div>
+                        <div className="other-links">
+                            <NavLink to="/" className="reset-link">Home</NavLink>
                         </div>
                     </form>
                 </div>

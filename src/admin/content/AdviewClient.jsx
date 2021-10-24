@@ -43,8 +43,7 @@ if (docSnap.exists()) {
             subjectData.push(this.state.userData.subject.subject_2?this.state.userData.subject.subject_2:"")
             subjectData.push(this.state.userData.subject.subject_3?this.state.userData.subject.subject_3:"")
             subjectData.push(this.state.userData.subject.subject_4?this.state.userData.subject.subject_4:"")
-           
-           
+            
             for (let index = 0; index < subjectData.length; index++) {
                 subject.push(
                     <div key={index} className="time-slot">
