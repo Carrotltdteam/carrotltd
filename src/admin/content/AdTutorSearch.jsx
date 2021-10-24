@@ -54,6 +54,17 @@ querySnapshot.forEach((doc) => {
 
 }
 
+else if(selected==="city"){
+    const querySnapshot = await getDocs(collection(db, "users"));
+querySnapshot.forEach((doc) => {
+    if (doc.data().contact.accountType==="Become"&&doc.data().basic.city===value.toUpperCase()) {
+        var newDoc=[...this.state.tutors]
+        newDoc.push(doc.data())
+         this.setState({tutors:newDoc})
+    }
+})
+}
+
    
     
 
@@ -80,6 +91,7 @@ clear=(e)=>{
                     <p className="name">NAME:&nbsp;{element.contact.name}</p>
                     <p className="name">GENDER:&nbsp;{element.basic.gender}</p>
                     <p className="name">STATE:&nbsp;{element.basic.stateOfResidence}</p>
+                    <p className="name">CITY:&nbsp;{element.basic.city}</p>
                     <p className="name">LGA:&nbsp;{element.basic.lga}</p>
                     <p className="email" id={element.contact.email} onClick={(e) => 
                 {navigator.clipboard.writeText(e.target.id)}
@@ -105,6 +117,7 @@ clear=(e)=>{
                                 <select className="form-control" required name="searchselect" id="select">
                                     <option defaultValue="">--Select Search option--</option>
                                     <option value="state">STATE</option>
+                                    <option value="city">CITY</option>
                                     <option value="lga">LGA</option>
                                     <option value="amount">PRICE</option>
                                 </select>
