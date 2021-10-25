@@ -27,7 +27,7 @@ function Footer() {
                     <div className="contact-info"><span><FaPhone/></span><a href="tel:+2347030050354">&nbsp;&nbsp;+234-703-005-0354</a></div>
                     <div className="contact-info"><span><FaPhone/></span><a href="tel:+447405805483">&nbsp;&nbsp;+447-405-805-483</a></div>
                     <div className="contact-info"><span><FiMail/></span><a href="mailto:carrotltdteam@gmail.com">&nbsp;&nbsp;carrotltdteam@gmail.com</a></div>
-                    <div className="contact-info"><span><FaComments/></span><a target="_blank" rel="noreferrer" href="https://wa.me/2348080507630?text=My%20name%20is%20________________%20I%20want%20to%20know%20more%20about%20Carrot.">&nbsp;&nbsp;Chat on Whatsapp</a></div>
+                    <div className="contact-info"><span><FaComments/></span><a target="_blank" rel="noreferrer" href=" https://wa.me/2347030050354">&nbsp;&nbsp;Chat on Whatsapp</a></div>
                     <div className="contact-info"><span><FaComments/></span><a href="/">&nbsp;&nbsp;Chat on Messenger</a></div>
                 </div>
 
