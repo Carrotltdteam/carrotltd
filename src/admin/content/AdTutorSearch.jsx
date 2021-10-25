@@ -15,62 +15,83 @@ const db=getFirestore(app)
 
 Search=async(e)=>{
     e.preventDefault()
-
+var count=0
     const selected=e.target.searchselect.value
     var value=e.target.searchvalue.value
    if (selected==="state") {
 const querySnapshot = await getDocs(collection(db, "users"));
 querySnapshot.forEach((doc) => {
-   
+  
     if (doc.data().contact.accountType==="Become"&&doc.data().basic.stateOfResidence===value.toUpperCase()) {
+        count++
        var newDoc=[...this.state.tutors]
        newDoc.push(doc.data())
         this.setState({tutors:newDoc})
     }
 })
-
+if (count===0) {
+    alert("No Data Found!!!")
+    this.clear()
+}
 }
 else if(selected==="lga"){
+    
     const querySnapshot = await getDocs(collection(db, "users"));
 querySnapshot.forEach((doc) => {
     
     if (doc.data().contact.accountType==="Become"&&doc.data().basic.lga ===value.toUpperCase()) {
+        count++
         var newDoc=[...this.state.tutors]
         newDoc.push(doc.data())
          this.setState({tutors:newDoc})
     }
 })
-
+if (count===0) {
+    alert("No Data Found!!!")
+    this.clear()
+}
 }
 else if(selected==="amount"){
+    
     const querySnapshot = await getDocs(collection(db, "users"));
 querySnapshot.forEach((doc) => {
     if (doc.data().contact.accountType==="Become"&&doc.data().bankReferee.amount===value) {
+        count++
         var newDoc=[...this.state.tutors]
         newDoc.push(doc.data())
          this.setState({tutors:newDoc})
     }
 })
-
+if (count===0) {
+    alert("No Data Found!!!")
+    this.clear()
+}
 }
 
 else if(selected==="city"){
+    
     const querySnapshot = await getDocs(collection(db, "users"));
 querySnapshot.forEach((doc) => {
     if (doc.data().contact.accountType==="Become"&&doc.data().basic.city===value.toUpperCase()) {
+        count++
         var newDoc=[...this.state.tutors]
         newDoc.push(doc.data())
          this.setState({tutors:newDoc})
     }
 })
+if (count===0) {
+    alert("No Data Found!!!")
+    this.clear()
+    
+}
 }
 
    
     
 
 }
-clear=(e)=>{
-    e.preventDefault()
+clear=()=>{
+  
     document.getElementById("value").value=""
     document.getElementById("select").value="--Select Search option--"
     this.setState({tutors:[]})

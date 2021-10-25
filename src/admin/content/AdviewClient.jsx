@@ -33,6 +33,11 @@ if (docSnap.exists()) {
       }
     
 } 
+else {
+  
+    alert("Client Not Found");
+    e.target.children.search.value=""
+  }
 }
 
     render() {

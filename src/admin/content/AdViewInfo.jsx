@@ -49,6 +49,11 @@ if (docSnap.exists()) {
       }
     
 } 
+else {
+  
+    alert("Tutor Not Found");
+    e.target.children.search.value=""
+  }
 }
     render() {
        
