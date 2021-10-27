@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom'
 import {FaAlignJustify,FaWhatsapp} from 'react-icons/fa'
 import {FiArrowUpCircle} from 'react-icons/fi'
 import Fade from 'react-reveal/Fade'
+import Tada  from 'react-reveal/Tada'
  class Header extends Component {
 
     constructor(props) {
@@ -82,7 +83,9 @@ import Fade from 'react-reveal/Fade'
                 </Fade>
 
                 <div className="whatsapp">
-                        <a target="_blank" rel="noreferrer" href=" https://wa.me/2347030050354"><FaWhatsapp  /></a>
+                  
+                <Tada  duration={2500} cascade  forever><a target="_blank" rel="noreferrer" href=" https://wa.me/2347030050354"><FaWhatsapp  /></a></Tada >
+                       
                     </div>
             </header>
             
