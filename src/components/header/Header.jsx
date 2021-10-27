@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import logo from '../../resources/images/logo.png'
 import {NavLink} from 'react-router-dom'
-import {FaAlignJustify} from 'react-icons/fa'
+import {FaAlignJustify,FaWhatsapp} from 'react-icons/fa'
 import {FiArrowUpCircle} from 'react-icons/fi'
 import Fade from 'react-reveal/Fade'
  class Header extends Component {
@@ -80,6 +80,10 @@ import Fade from 'react-reveal/Fade'
                         <FiArrowUpCircle onClick={this.ScrollToTop} />
                     </div>
                 </Fade>
+
+                <div className="whatsapp">
+                        <a target="_blank" rel="noreferrer" href=" https://wa.me/2347030050354"><FaWhatsapp  /></a>
+                    </div>
             </header>
             
             </>
