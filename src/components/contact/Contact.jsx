@@ -56,9 +56,10 @@ import Footer from '../footer/Footer'
                     <div className="body-1-right">
                    
                         <p className="right-text">
-                        Our head office is located at 3 William street, Sawmill road Gbagada, 
-                        but we provide tutors anywhere in Lagos/Abuja. 
-                        Mondays-Saturdays, 8AM-6PM
+                            Our head office is located at 3 William street, 
+                            Sawmill road Gbagada, but we provide tutors 
+                            anywhere in Nigeria and United Kingdom. 
+                            Mondays-Saturdays, 8AM-6PM
                         </p>
     
     
@@ -68,9 +69,8 @@ import Footer from '../footer/Footer'
                                 <h3>UK Phone Number</h3>
                                 <p>+447-405-805-483</p>
                                 <h3>Nigeria Phone Number</h3>
-                                <p>+234-703-005-0354, +234-808-050-7630</p>
-                                <h3>Nigeria Phone Number</h3>
-                                <p>+234-705-532-5747</p>
+                                <p>+234-703-005-0354</p>
+                                
                             </div>
                             <div className="contact-info">
                                 <div className="icon"><span><FiMail/></span></div>

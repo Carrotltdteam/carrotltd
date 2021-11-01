@@ -13,11 +13,10 @@ function Footer() {
                     </div>
                     <br />
                     <p className="left-text">
-                        Carrot focuses on connecting potential 
-                        learners with skilled tutors. 
-                        Our interest is to beyond the norm of 
-                        formal education by providing tutors 
-                        for basically anything a client may wish to learn.
+                        Carrot focuses on connecting potential learners with skilled 
+                        tutors. Our interest is to break from the norm of formal 
+                        education by providing tutors for basically anything a 
+                        client may wish to learn
                     </p>
 
                 </div>

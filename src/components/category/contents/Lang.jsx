@@ -54,7 +54,7 @@ function Lang() {
                         <div className="image"><img src={upper9} alt="cat-caption" /></div>
                         <h2>Yoruba Language Tutor</h2>
                         <p>Learn to speak Yoruba fluently by getting a Professional Yoruba 
-                            Language tutor from Educere today.
+                            Language tutor from Carrot today.
                         </p>
                     </div>
 

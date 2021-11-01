@@ -43,7 +43,7 @@ return(
                                 <option value="lower primary">lower primary</option>
                                 <option value="upper primary">upper primary</option>
                                 <option value="junior secondary">junior secondary</option>
-                                <option value="senoir secondary">senoir secondary</option>
+                                <option value="senior secondary">senior secondary</option>
                                 <option value="igcse">igcse</option>
                                 <option value="jamb/utme">jamb/utme</option>
                                 <option value="waec">waec</option>
@@ -59,7 +59,7 @@ return(
                             <input type="button" className={content==="lower primary"?"btn-category active":"btn-category"}  onClick={()=>setContent("lower primary")} value="lower primary"  />
                             <input type="button" className={content==="upper primary"?"btn-category active":"btn-category"}  onClick={()=>setContent("upper primary")} value="upper primary" />
                             <input type="button" className={content==="junior secondary"?"btn-category active":"btn-category"}  onClick={()=>setContent("junior secondary")} value="junior secondary" />
-                            <input type="button" className={content==="senoir secondary"?"btn-category active":"btn-category"}  onClick={()=>setContent("senoir secondary")} value="senoir secondary" />
+                            <input type="button" className={content==="senior secondary"?"btn-category active":"btn-category"}  onClick={()=>setContent("senior secondary")} value="senior secondary" />
                             <input type="button" className={content==="igcse"?"btn-category active":"btn-category"}  onClick={()=>setContent("igcse")} value="igcse" />
                             <input type="button" className={content==="jamb/utme"?"btn-category active":"btn-category"}  onClick={()=>setContent("jamb/utme")} value="jamb/utme" />
                             <input type="button" className={content==="waec"?"btn-category active":"btn-category"}  onClick={()=>setContent("waec")} value="waec" />
@@ -78,7 +78,7 @@ return(
                             content==="lower primary"?<LowerPrimary/>:
                             content==="upper primary"?<UpperPrimary/>:
                             content==="junior secondary"?<JuniorSec/>:
-                            content==="senoir secondary"?<SeniorSec/>:
+                            content==="senior secondary"?<SeniorSec/>:
                             content==="igcse"?<Igcse/>:
                             content==="jamb/utme"?<Jamb/>:
                             content==="waec"?<Waec/>:
@@ -99,7 +99,7 @@ return(
                                 <option value="lower primary">lower primary</option>
                                 <option value="upper primary">upper primary</option>
                                 <option value="junior secondary">junior secondary</option>
-                                <option value="senoir secondary">senoir secondary</option>
+                                <option value="senior secondary">senior secondary</option>
                                 <option value="igcse">igcse</option>
                                 <option value="jamb/utme">jamb/utme</option>
                                 <option value="waec">waec</option>

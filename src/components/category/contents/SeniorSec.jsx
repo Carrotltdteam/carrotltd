@@ -16,7 +16,7 @@ function SeniorSec() {
         <Fade duration={2000}>
         <div className="cat-container">
             <div className="cat-content">
-            <div className="cat-button"><h2>senoir secondary</h2></div>
+            <div className="cat-button"><h2>senior secondary</h2></div>
                 <div className="cat-body">
                     <div className="card">
                         <div className="image"><img src={upper} alt="cat-caption" /></div>
