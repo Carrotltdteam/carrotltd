@@ -8,6 +8,7 @@
                 border-radius: 10px;
                 color: $pwhite;
                 text-transform: uppercase;
+
             }
         }
         .cat-body{
@@ -15,6 +16,9 @@
             display: grid;
             grid-template-columns: repeat(3,1fr);
             gap: 2%;
+            h2{
+                color: $primary;
+            }
             
             @media only screen and (max-width: 700px) {
                 grid-template-columns: 1fr 1fr;
