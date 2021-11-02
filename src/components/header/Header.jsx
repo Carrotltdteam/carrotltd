@@ -18,6 +18,16 @@ import Tada  from 'react-reveal/Tada'
         }
     }
 
+
+    componentDidMount(){
+      window.addEventListener('scroll',this.setScroll);
+      window.addEventListener('scroll', this.SetToTop);
+    }
+
+    componentWillUnmount(){
+      window.removeEventListener('scroll',this.setScroll)
+      window.removeEventListener('scroll',this.SetToTop)
+    }
   setScroll=()=>{
     const offset=window.scrollY;
     if(offset > 35 ){
@@ -54,8 +64,7 @@ import Tada  from 'react-reveal/Tada'
 
     }
     render() {
-        window.addEventListener('scroll',this.setScroll);
-        window.addEventListener('scroll', this.SetToTop);
+       
         return (
             <>
             <header className={this.state.scrolled?'header-container':'scrolled' }>

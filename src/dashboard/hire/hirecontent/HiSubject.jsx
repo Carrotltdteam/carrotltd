@@ -27,7 +27,8 @@ const db=getFirestore(app)
                     subject:doc.data().subject,
                     planPrice:doc.data().plan.price,
                     plan:doc.data().plan.name,
-                    contact:doc.data().contact.phone
+                    contact:doc.data().contact.phone,
+                    price:""
                 });         
             }   
       else {
@@ -65,7 +66,9 @@ const db=getFirestore(app)
                        }
                 } 
                 
-             }).then(()=>{
+             }
+             ).then(()=>{
+                this.setState({price:totalPrice})
                 emailjs.sendForm("service_nihdzjh","template_oa5mu7d",e.target,"user_MQhQ6YXm3I2JEqVCsmp5T").then(res=>
                     {}
                 ).catch(error=>{alert(error.code)})
@@ -85,8 +88,10 @@ const db=getFirestore(app)
         for (var index=1; index<=length;index++) {
             items.push( <Fade  key={index} duration={1500} ><form id={`subject_`+index} name={`subject_`+index}  onSubmit={this.SubmitData} className="subjects">
             <h2>Subject {index}</h2>
-            <input type="text" id="hide" name="email" value={auth.currentUser.email} />
-            <input type="text" id="hide" name="contact" value={this.state.contact} />
+            <input type="text" id="hide" name="email" defaultValue={auth.currentUser.email} />
+            <input type="text" id="hide" name="plan" defaultValue={this.state.plan} />
+            <input type="text" id="hide" name="price" defaultValue={this.state.price} />
+            <input type="text" id="hide" name="contact" defaultValue={this.state.contact} />
             <div  className="group-class">
                <select required name="group" className="form-control" >
                    <option value="">Subject Group</option>
@@ -170,7 +175,7 @@ const db=getFirestore(app)
                     <div className="subject">
                             
                         <select required name="subject" onChange={this.SetSelect} className="form-control" id="">
-                            <option value="1">How Many Subject Do you Need</option>
+                            <option value="">How Many Subject Do you Need</option>
                             <option defaultValue="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

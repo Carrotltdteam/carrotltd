@@ -50,7 +50,7 @@ componentDidMount(){
 
         }
         const theRef = doc(db, "users", auth.currentUser.email);
-    await updateDoc(theRef, {
+     updateDoc(theRef, {
       plan: {
         name:e.target.name,
         price:price,
