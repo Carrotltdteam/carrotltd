@@ -14,12 +14,15 @@ import Footer from '../footer/Footer'
         e.preventDefault()
     
         emailjs.sendForm("service_nihdzjh","template_cyu8at1",e.target,"user_MQhQ6YXm3I2JEqVCsmp5T").then(res=>
-            {alert("Email Sent!!!")}
+            {alert("Email Sent!!!")
+            e.target.name.value=""
+            e.target.subject.value=""
+            e.target.message.value=""
+            e.target.email.value=""
+        }
+            
         ).catch(error=>{alert(error.code)})
-        e.target.name.value=""
-        e.target.subject.value=""
-        e.target.message.value=""
-        e.target.email.value=""
+       
     }
     render() {
         window.scrollTo({
