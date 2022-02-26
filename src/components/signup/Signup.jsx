@@ -149,7 +149,11 @@ class Signup extends PureComponent {
 									<h1>Join Carrot as a Tutor or to hire a Tutor</h1>
 									<p>
 										Get started! Give us your personal details to request a home
-										tutor and deduce your tuition
+										tutor and deduce your tuition.
+									</p>
+									<p style={{ color: "red" }}>
+										If you want to become a Tutor, Please select the "Become a
+										Tutor" button before submission.
 									</p>
 								</div>
 								<form onSubmit={this.SignUp}>

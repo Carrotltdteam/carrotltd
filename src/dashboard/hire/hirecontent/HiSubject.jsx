@@ -27,7 +27,6 @@ class HiSubject extends Component {
 					planPrice: doc.data().plan.price,
 					plan: doc.data().plan.name,
 					contact: doc.data().contact.phone,
-					price: "",
 				});
 			} else {
 				alert("Error Reload Page");
@@ -42,11 +41,7 @@ class HiSubject extends Component {
 
 	SubmitData = async (e) => {
 		e.preventDefault();
-		var totalPrice =
-			parseInt(this.state.planPrice) *
-				parseInt(e.target.perweek.value) *
-				parseInt(e.target.duration.value) +
-			parseInt(e.target.hours.value) * this.state.planPrice;
+
 		const theRef = doc(db, "users", auth.currentUser.email);
 		await updateDoc(theRef, {
 			subject: {
@@ -58,14 +53,12 @@ class HiSubject extends Component {
 					hours: e.target.hours.value,
 					perweek: e.target.perweek.value,
 					duration: e.target.duration.value,
-					price: totalPrice,
 					plan: this.state.plan,
 					completed: false,
 				},
 			},
 		})
 			.then(() => {
-				this.setState({ price: totalPrice });
 				emailjs
 					.sendForm(
 						"service_nihdzjh",
@@ -79,8 +72,7 @@ class HiSubject extends Component {
 					});
 				document.getElementById([e.target.name]).style.display = "none";
 				alert(
-					"Subject Added Successful\nYou will be contacted with more details soon\nPrice: " +
-						totalPrice
+					"Subject Added Successful\nYou will be contacted with more details soon for more details"
 				);
 			})
 			.catch((error) => {
@@ -114,12 +106,7 @@ class HiSubject extends Component {
 							name="plan"
 							defaultValue={this.state.plan}
 						/>
-						<input
-							type="text"
-							id="hide"
-							name="price"
-							defaultValue={this.state.price}
-						/>
+
 						<input
 							type="text"
 							id="hide"
