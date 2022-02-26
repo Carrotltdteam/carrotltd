@@ -72,7 +72,7 @@ class HiSubject extends Component {
 					});
 				document.getElementById([e.target.name]).style.display = "none";
 				alert(
-					"Subject Added Successful\nYou will be contacted with more details soon for more details"
+					"Subject Added Successful\nYou will be contacted with more details soon."
 				);
 			})
 			.catch((error) => {
